@@ -1,0 +1,428 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* paperoffice_ai
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: sv\n"
+"Plural-Forms: \n"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Attach the supplier invoice (PDF or image) to %s first."
+msgstr "Bifoga leverantörsfakturan (PDF eller bild) till %s först."
+
+#. module: paperoffice_ai
+#: model:ir.model.fields.selection,name:paperoffice_ai.selection__res_config_settings__paperoffice_model__basic-pro-max
+msgid "Basic"
+msgstr "Basic"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Bill total differs from the document total. Check taxes and lines."
+msgstr "Fakturabeloppet skiljer sig från dokumentets totalbelopp. Kontrollera skatter och rader."
+
+#. module: paperoffice_ai
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.view_move_form_paperoffice
+msgid "Check PaperOffice AI result"
+msgstr "Kontrollera PaperOffice AI-resultatet"
+
+#. module: paperoffice_ai
+#: model:ir.model,name:paperoffice_ai.model_res_config_settings
+msgid "Config Settings"
+msgstr "Konfigurationsinställningar"
+
+#. module: paperoffice_ai
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.res_config_settings_view_form_paperoffice
+msgid "Create a User token (po_ut_...) under Account &gt; API in PaperOffice AI."
+msgstr "Skapa ett användartoken (po_ut_...) under Konto &gt; API i PaperOffice AI."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Currency %s on the document is not active in Odoo."
+msgstr "Valutan %s på dokumentet är inte aktiv i Odoo."
+
+#. module: paperoffice_ai
+#: model:ir.model.fields.selection,name:paperoffice_ai.selection__account_move__paperoffice_state__done
+msgid "Extracted"
+msgstr "Extraherat"
+
+#. module: paperoffice_ai
+#: model:ir.model.fields.selection,name:paperoffice_ai.selection__account_move__paperoffice_state__error
+msgid "Failed"
+msgstr "Misslyckades"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "IBAN"
+msgstr "IBAN"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "IBAN on the document is not one of the vendor's known bank accounts."
+msgstr "IBAN:n på dokumentet matchar inte någon av leverantörens kända bankkonton."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Invoice %s"
+msgstr "Faktura %s"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Invoice date"
+msgstr "Fakturadatum"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Invoice number"
+msgstr "Fakturanummer"
+
+#. module: paperoffice_ai
+#: model:ir.model,name:paperoffice_ai.model_account_move
+msgid "Journal Entry"
+msgstr "Bokföringspost"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Net"
+msgstr "Netto"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Net plus VAT on the document does not match the total."
+msgstr "Summan netto plus moms på dokumentet matchar inte totalbeloppet."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#: code:addons/paperoffice_ai/models/paperoffice_client.py:0
+#, python-format
+msgid "No answer from PaperOffice AI. The document may have been received. Please check in PaperOffice AI before sending it again."
+msgstr "Inget svar från PaperOffice AI. Dokumentet kan ha mottagits. Kontrollera i PaperOffice AI innan du skickar igen."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "No purchase tax with %s %% found. Set the taxes on the lines."
+msgstr "Ingen ingående moms med %s %% hittades. Ställ in skatterna på raderna."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Only draft vendor bills and refunds can be read with PaperOffice AI."
+msgstr "Endast utkast till leverantörsfakturor och leverantörskreditnotor kan läsas av PaperOffice AI."
+
+#. module: paperoffice_ai
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_bank_statement_line__paperoffice_state
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_move__paperoffice_state
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_payment__paperoffice_state
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.res_config_settings_view_form_paperoffice
+msgid "PaperOffice AI"
+msgstr "PaperOffice AI"
+
+#. module: paperoffice_ai
+#: model:ir.model.fields,field_description:paperoffice_ai.field_res_config_settings__paperoffice_api_key
+msgid "PaperOffice AI API key"
+msgstr "API-nyckel för PaperOffice AI"
+
+#. module: paperoffice_ai
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_bank_statement_line__paperoffice_enabled
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_move__paperoffice_enabled
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_payment__paperoffice_enabled
+msgid "PaperOffice AI available"
+msgstr "PaperOffice AI tillgänglig"
+
+#. module: paperoffice_ai
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_bank_statement_line__paperoffice_warnings
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_move__paperoffice_warnings
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_payment__paperoffice_warnings
+msgid "PaperOffice AI checks"
+msgstr "Kontroller i PaperOffice AI"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/paperoffice_client.py:0
+#, python-format
+msgid "PaperOffice AI could not be reached. Nothing was sent. Please try again later."
+msgstr "PaperOffice AI kunde inte nås. Ingenting skickades. Försök senare."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "PaperOffice AI could not be reached. The remaining bills were not sent. Please try again later."
+msgstr "PaperOffice AI kunde inte nås. De återstående fakturorna skickades inte. Försök igen senare."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "PaperOffice AI could not read the document (%s)."
+msgstr "PaperOffice AI kunde inte läsa dokumentet (%s)."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "PaperOffice AI did not answer in time. Please try again."
+msgstr "PaperOffice AI svarade inte inom tid. Försök igen."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "PaperOffice AI extracted:"
+msgstr "PaperOffice AI extraherade:"
+
+#. module: paperoffice_ai
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.view_move_form_paperoffice
+msgid "PaperOffice AI is reading the attached document. The bill is filled automatically when it is done."
+msgstr "PaperOffice AI läser det bifogade dokumentet. Fakturan fylls automatiskt när den är klar."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "PaperOffice AI is switched off. An administrator can switch it on in the Accounting settings."
+msgstr "PaperOffice AI är avstängt. En administratör kan aktivera den i Bokföringsinställningarna."
+
+#. module: paperoffice_ai
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_bank_statement_line__paperoffice_job_id
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_move__paperoffice_job_id
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_payment__paperoffice_job_id
+msgid "PaperOffice AI job"
+msgstr "Jobb för PaperOffice AI"
+
+#. module: paperoffice_ai
+#: model:ir.model.fields,field_description:paperoffice_ai.field_res_config_settings__paperoffice_model
+msgid "PaperOffice AI model"
+msgstr "Modell för PaperOffice AI"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/paperoffice_client.py:0
+#, python-format
+msgid "PaperOffice AI rejected the API key. Create a User token (po_ut_...) under Account > API and enter it in the Accounting settings."
+msgstr "PaperOffice AI nekade API-nyckeln. Skapa ett användartoken (po_ut_...) under Konto > API och ange det i Bokföringsinställningarna."
+
+#. module: paperoffice_ai
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_bank_statement_line__paperoffice_result
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_move__paperoffice_result
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_payment__paperoffice_result
+msgid "PaperOffice AI result"
+msgstr "Resultat från PaperOffice AI"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/paperoffice_client.py:0
+#, python-format
+msgid "PaperOffice AI returned an error (%s)."
+msgstr "PaperOffice AI returnerade ett fel (%s)."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "PaperOffice AI returned no invoice fields."
+msgstr "PaperOffice AI returnerade inga fakturafält."
+
+#. module: paperoffice_ai
+#: model:ir.actions.server,name:paperoffice_ai.ir_cron_paperoffice_poll_ir_actions_server
+msgid "PaperOffice AI: fetch extraction results"
+msgstr "PaperOffice AI: hämta extraheringsresultat"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Please check:"
+msgstr "Vänligen kontrollera:"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/paperoffice_client.py:0
+#, python-format
+msgid "Please enter your PaperOffice AI API key in the Accounting settings."
+msgstr "Vänligen ange din PaperOffice AI API-nyckel i Bokföringsinställningarna."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Please select at most %s bills at once."
+msgstr "Välj högst %s fakturor åt gången."
+
+#. module: paperoffice_ai
+#: model:ir.model.fields.selection,name:paperoffice_ai.selection__res_config_settings__paperoffice_model__premium-pro-max
+msgid "Premium"
+msgstr "Premium"
+
+#. module: paperoffice_ai
+#: model:ir.model.fields.selection,name:paperoffice_ai.selection__account_move__paperoffice_state__queued
+msgid "Processing"
+msgstr "Bearbetning"
+
+#. module: paperoffice_ai
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.view_move_form_paperoffice
+msgid "Read again with PaperOffice AI"
+msgstr "Läs om med PaperOffice AI"
+
+#. module: paperoffice_ai
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.res_config_settings_view_form_paperoffice
+msgid "Read vendor bills with PaperOffice AI (paid)"
+msgstr "Läs leverantörsfakturer med PaperOffice AI (mot avgift)"
+
+#. module: paperoffice_ai
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.view_in_invoice_bill_tree_paperoffice
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.view_move_form_paperoffice
+msgid "Read with PaperOffice AI"
+msgstr "Läs med PaperOffice AI"
+
+#. module: paperoffice_ai
+#: model:ir.model.fields,field_description:paperoffice_ai.field_res_config_settings__paperoffice_enabled
+msgid "Send vendor bills to PaperOffice AI (paid)"
+msgstr "Skicka leverantörsfakturer till PaperOffice AI (mot avgift)"
+
+#. module: paperoffice_ai
+#: model:ir.model.fields.selection,name:paperoffice_ai.selection__account_move__paperoffice_state__sending
+msgid "Sending"
+msgstr "Skickar..."
+
+#. module: paperoffice_ai
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.res_config_settings_view_form_paperoffice
+msgid "Sends the attached document of a vendor bill to PaperOffice AI when a user clicks the button. Nothing is sent automatically. No specific plan is required. Usage is billed to your PaperOffice AI account as usual."
+msgstr "Skickar det bifogade dokumentet för en leverantörsfaktura till PaperOffice AI när användaren klickar på knappen. Ingenting skickas automatiskt. Ingen specifik plan krävs. Användningen faktureras till ditt PaperOffice AI-konto som vanligt."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Sent %s to PaperOffice AI for extraction."
+msgstr "Skickat %s till PaperOffice AI för extrahering."
+
+#. module: paperoffice_ai
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_bank_statement_line__paperoffice_sent_at
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_move__paperoffice_sent_at
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_payment__paperoffice_sent_at
+msgid "Sent to PaperOffice AI"
+msgstr "Skickades till PaperOffice AI"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Several VAT rates on the document. Set the taxes per line."
+msgstr "Flera momssteg i dokumentet. Ställ in skatterna per rad."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Supplier"
+msgstr "Leverantör"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Supplier '%s' not found. Please select or create the vendor."
+msgstr "Leverantören '%s' hittades inte. Välj eller skapa leverantören."
+
+#. module: paperoffice_ai
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.view_move_form_paperoffice
+msgid "The attached document will be sent to PaperOffice AI. Continue?"
+msgstr "Det bifogade dokumentet kommer att skickas till PaperOffice AI. Vill du fortsätta?"
+
+#. module: paperoffice_ai
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.view_in_invoice_bill_tree_paperoffice
+msgid "The attached documents of the selected bills that were not sent yet will be sent to PaperOffice AI (at most 20). Continue?"
+msgstr "De bifogade dokumenten för de valda fakturorna som ännu inte har skickats kommer att skickas till PaperOffice AI (högst 20). Vill du fortsätta?"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "The bill is no longer a draft. Nothing was changed."
+msgstr "Fakturan är inte längre ett utkast. Inget ändrades."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "The result was saved but could not be applied to the bill. Please fill the bill manually."
+msgstr "Resultatet sparades men kunde inte tillämpas på fakturan. Fyll i fakturan manuellt."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "These bills are being sent to PaperOffice AI right now. Please wait a moment."
+msgstr "Dessa fakturer skickas just nu till PaperOffice AI. Vänta en stund."
+
+#. module: paperoffice_ai
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.view_move_form_paperoffice
+msgid "This bill was already sent to PaperOffice AI. Please check the result in PaperOffice AI first. Sending again is billed again. Continue?"
+msgstr "Den här fakturan har redan skickats till PaperOffice AI. Kontrollera resultatet i PaperOffice AI först. Om du skickar igen debiteras det på nytt. Vill du fortsätta?"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Total"
+msgstr "Totalt"
+
+#. module: paperoffice_ai
+#: model:ir.model.fields.selection,name:paperoffice_ai.selection__res_config_settings__paperoffice_model__ultra-pro-max
+msgid "Ultra"
+msgstr "Ultra"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "VAT"
+msgstr "Moms"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Vendor has no bank account on file. Verify the IBAN before paying."
+msgstr "Leverantören har inget bankkonto registrerat. Kontrollera IBAN innan betalning."
+
+#. module: paperoffice_ai
+#: model:ir.model.fields,help:paperoffice_ai.field_res_config_settings__paperoffice_enabled
+msgid "When enabled, the attached document of a vendor bill is sent to PaperOffice AI for extraction when a user clicks the button. Nothing is sent automatically. No specific plan is required. Usage is billed to your PaperOffice AI account as usual."
+msgstr "När funktionen är aktiverad skickas det bifogade dokumentet för en leverantörsfaktura till PaperOffice AI för extrahering när användaren klickar på knappen. Ingenting skickas automatiskt. Ingen specifik plan krävs. Användningen faktureras till ditt PaperOffice AI-konto som vanligt."
+
+#. module: paperoffice_ai
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.res_config_settings_view_form_paperoffice
+msgid "po_ut_..."
+msgstr "po_ut_..."
+

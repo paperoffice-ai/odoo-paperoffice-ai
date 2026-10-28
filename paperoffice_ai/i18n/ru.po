@@ -1,0 +1,428 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* paperoffice_ai
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: ru\n"
+"Plural-Forms: \n"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Attach the supplier invoice (PDF or image) to %s first."
+msgstr "Прикрепите счет поставщика (PDF или изображение) к %s в первую очередь."
+
+#. module: paperoffice_ai
+#: model:ir.model.fields.selection,name:paperoffice_ai.selection__res_config_settings__paperoffice_model__basic-pro-max
+msgid "Basic"
+msgstr "Basic"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Bill total differs from the document total. Check taxes and lines."
+msgstr "Сумма счета отличается от суммы документа. Проверьте налоги и строки."
+
+#. module: paperoffice_ai
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.view_move_form_paperoffice
+msgid "Check PaperOffice AI result"
+msgstr "Проверьте результат PaperOffice AI"
+
+#. module: paperoffice_ai
+#: model:ir.model,name:paperoffice_ai.model_res_config_settings
+msgid "Config Settings"
+msgstr "Настройки конфигурации"
+
+#. module: paperoffice_ai
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.res_config_settings_view_form_paperoffice
+msgid "Create a User token (po_ut_...) under Account &gt; API in PaperOffice AI."
+msgstr "Создайте токен пользователя (po_ut_...) в разделе Аккаунт &gt; API в PaperOffice AI."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Currency %s on the document is not active in Odoo."
+msgstr "Валюта %s на документе не активна в Odoo."
+
+#. module: paperoffice_ai
+#: model:ir.model.fields.selection,name:paperoffice_ai.selection__account_move__paperoffice_state__done
+msgid "Extracted"
+msgstr "Извлечено"
+
+#. module: paperoffice_ai
+#: model:ir.model.fields.selection,name:paperoffice_ai.selection__account_move__paperoffice_state__error
+msgid "Failed"
+msgstr "Не удалось"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "IBAN"
+msgstr "IBAN"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "IBAN on the document is not one of the vendor's known bank accounts."
+msgstr "IBAN на документе не соответствует известным банковским счетам поставщика."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Invoice %s"
+msgstr "Счет-фактура %s"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Invoice date"
+msgstr "Дата счета"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Invoice number"
+msgstr "Номер счета"
+
+#. module: paperoffice_ai
+#: model:ir.model,name:paperoffice_ai.model_account_move
+msgid "Journal Entry"
+msgstr "Бухгалтерская проводка"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Net"
+msgstr "Нетто"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Net plus VAT on the document does not match the total."
+msgstr "Чистая сумма плюс НДС на документе не совпадает с итоговой суммой."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#: code:addons/paperoffice_ai/models/paperoffice_client.py:0
+#, python-format
+msgid "No answer from PaperOffice AI. The document may have been received. Please check in PaperOffice AI before sending it again."
+msgstr "PaperOffice AI не ответил. Документ может быть получен. Пожалуйста, проверьте его в PaperOffice AI перед повторной отправкой."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "No purchase tax with %s %% found. Set the taxes on the lines."
+msgstr "Налог на покупку %s %% не найден. Установите налоги для строк."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Only draft vendor bills and refunds can be read with PaperOffice AI."
+msgstr "Читать с помощью PaperOffice AI можно только черновики счетов поставщиков и возвраты."
+
+#. module: paperoffice_ai
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_bank_statement_line__paperoffice_state
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_move__paperoffice_state
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_payment__paperoffice_state
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.res_config_settings_view_form_paperoffice
+msgid "PaperOffice AI"
+msgstr "PaperOffice AI"
+
+#. module: paperoffice_ai
+#: model:ir.model.fields,field_description:paperoffice_ai.field_res_config_settings__paperoffice_api_key
+msgid "PaperOffice AI API key"
+msgstr "Ключ API PaperOffice AI"
+
+#. module: paperoffice_ai
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_bank_statement_line__paperoffice_enabled
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_move__paperoffice_enabled
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_payment__paperoffice_enabled
+msgid "PaperOffice AI available"
+msgstr "PaperOffice AI доступен"
+
+#. module: paperoffice_ai
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_bank_statement_line__paperoffice_warnings
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_move__paperoffice_warnings
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_payment__paperoffice_warnings
+msgid "PaperOffice AI checks"
+msgstr "Проверки PaperOffice AI"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/paperoffice_client.py:0
+#, python-format
+msgid "PaperOffice AI could not be reached. Nothing was sent. Please try again later."
+msgstr "PaperOffice AI недоступен. Ничего не было отправлено. Пожалуйста, попробуйте позже."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "PaperOffice AI could not be reached. The remaining bills were not sent. Please try again later."
+msgstr "Не удалось связаться с PaperOffice AI. Оставшиеся счета не были отправлены. Пожалуйста, попробуйте позже."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "PaperOffice AI could not read the document (%s)."
+msgstr "PaperOffice AI не смог прочитать документ (%s)."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "PaperOffice AI did not answer in time. Please try again."
+msgstr "PaperOffice AI не ответил вовремя. Пожалуйста, попробуйте снова."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "PaperOffice AI extracted:"
+msgstr "Извлечено с помощью PaperOffice AI:"
+
+#. module: paperoffice_ai
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.view_move_form_paperoffice
+msgid "PaperOffice AI is reading the attached document. The bill is filled automatically when it is done."
+msgstr "PaperOffice AI читает прикрепленный документ. Счет заполняется автоматически, когда процесс завершится."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "PaperOffice AI is switched off. An administrator can switch it on in the Accounting settings."
+msgstr "PaperOffice AI выключен. Администратор может включить его в настройках Учета."
+
+#. module: paperoffice_ai
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_bank_statement_line__paperoffice_job_id
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_move__paperoffice_job_id
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_payment__paperoffice_job_id
+msgid "PaperOffice AI job"
+msgstr "Задача PaperOffice AI"
+
+#. module: paperoffice_ai
+#: model:ir.model.fields,field_description:paperoffice_ai.field_res_config_settings__paperoffice_model
+msgid "PaperOffice AI model"
+msgstr "Модель PaperOffice AI"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/paperoffice_client.py:0
+#, python-format
+msgid "PaperOffice AI rejected the API key. Create a User token (po_ut_...) under Account > API and enter it in the Accounting settings."
+msgstr "Ключ API отклонен PaperOffice AI. Создайте токен пользователя (po_ut_...) в разделе Аккаунт > API и введите его в настройках учета."
+
+#. module: paperoffice_ai
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_bank_statement_line__paperoffice_result
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_move__paperoffice_result
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_payment__paperoffice_result
+msgid "PaperOffice AI result"
+msgstr "Результат PaperOffice AI"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/paperoffice_client.py:0
+#, python-format
+msgid "PaperOffice AI returned an error (%s)."
+msgstr "PaperOffice AI вернул ошибку (%s)."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "PaperOffice AI returned no invoice fields."
+msgstr "PaperOffice AI не вернул поля счета-фактуры."
+
+#. module: paperoffice_ai
+#: model:ir.actions.server,name:paperoffice_ai.ir_cron_paperoffice_poll_ir_actions_server
+msgid "PaperOffice AI: fetch extraction results"
+msgstr "PaperOffice AI: получить результаты извлечения"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Please check:"
+msgstr "Пожалуйста, проверьте:"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/paperoffice_client.py:0
+#, python-format
+msgid "Please enter your PaperOffice AI API key in the Accounting settings."
+msgstr "Введите ваш ключ API PaperOffice AI в настройках Учета."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Please select at most %s bills at once."
+msgstr "Пожалуйста, выберите одновременно максимум %s счетов-фактур."
+
+#. module: paperoffice_ai
+#: model:ir.model.fields.selection,name:paperoffice_ai.selection__res_config_settings__paperoffice_model__premium-pro-max
+msgid "Premium"
+msgstr "Premium"
+
+#. module: paperoffice_ai
+#: model:ir.model.fields.selection,name:paperoffice_ai.selection__account_move__paperoffice_state__queued
+msgid "Processing"
+msgstr "Обработка"
+
+#. module: paperoffice_ai
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.view_move_form_paperoffice
+msgid "Read again with PaperOffice AI"
+msgstr "Прочитать еще раз с помощью PaperOffice AI"
+
+#. module: paperoffice_ai
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.res_config_settings_view_form_paperoffice
+msgid "Read vendor bills with PaperOffice AI (paid)"
+msgstr "Чтение счетов поставщиков с помощью PaperOffice AI (платно)"
+
+#. module: paperoffice_ai
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.view_in_invoice_bill_tree_paperoffice
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.view_move_form_paperoffice
+msgid "Read with PaperOffice AI"
+msgstr "Читать с помощью PaperOffice AI"
+
+#. module: paperoffice_ai
+#: model:ir.model.fields,field_description:paperoffice_ai.field_res_config_settings__paperoffice_enabled
+msgid "Send vendor bills to PaperOffice AI (paid)"
+msgstr "Отправка счетов поставщиков в PaperOffice AI (платно)"
+
+#. module: paperoffice_ai
+#: model:ir.model.fields.selection,name:paperoffice_ai.selection__account_move__paperoffice_state__sending
+msgid "Sending"
+msgstr "Отправка"
+
+#. module: paperoffice_ai
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.res_config_settings_view_form_paperoffice
+msgid "Sends the attached document of a vendor bill to PaperOffice AI when a user clicks the button. Nothing is sent automatically. No specific plan is required. Usage is billed to your PaperOffice AI account as usual."
+msgstr "Отправляет прикреплённый документ счёта поставщика в PaperOffice AI при нажатии пользователем кнопки. Ничего не отправляется автоматически. Конкретный тарифный план не требуется. Использование оплачивается, как обычно, через ваш аккаунт PaperOffice AI."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Sent %s to PaperOffice AI for extraction."
+msgstr "%s отправлено в PaperOffice AI для извлечения данных."
+
+#. module: paperoffice_ai
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_bank_statement_line__paperoffice_sent_at
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_move__paperoffice_sent_at
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_payment__paperoffice_sent_at
+msgid "Sent to PaperOffice AI"
+msgstr "Отправлено в PaperOffice AI"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Several VAT rates on the document. Set the taxes per line."
+msgstr "Несколько ставок НДС в документе. Установите налоги по строкам."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Supplier"
+msgstr "Поставщик"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Supplier '%s' not found. Please select or create the vendor."
+msgstr "Поставщик '%s' не найден. Пожалуйста, выберите или создайте поставщика."
+
+#. module: paperoffice_ai
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.view_move_form_paperoffice
+msgid "The attached document will be sent to PaperOffice AI. Continue?"
+msgstr "Прикрепленный документ будет отправлен в PaperOffice AI. Продолжить?"
+
+#. module: paperoffice_ai
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.view_in_invoice_bill_tree_paperoffice
+msgid "The attached documents of the selected bills that were not sent yet will be sent to PaperOffice AI (at most 20). Continue?"
+msgstr "Прикрепленные документы выбранных счетов-фактур, которые еще не были отправлены, будут отправлены в PaperOffice AI (максимум 20). Продолжить?"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "The bill is no longer a draft. Nothing was changed."
+msgstr "Счет-фактура больше не является черновиком. Ничего не было изменено."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "The result was saved but could not be applied to the bill. Please fill the bill manually."
+msgstr "Результат сохранён, но применить его к счёту не удалось. Пожалуйста, заполните счёт вручную."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "These bills are being sent to PaperOffice AI right now. Please wait a moment."
+msgstr "Эти счета-фактуры сейчас отправляются в PaperOffice AI. Пожалуйста, подождите немного."
+
+#. module: paperoffice_ai
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.view_move_form_paperoffice
+msgid "This bill was already sent to PaperOffice AI. Please check the result in PaperOffice AI first. Sending again is billed again. Continue?"
+msgstr "Этот счёт уже был отправлен в PaperOffice AI. Сначала проверьте результат в PaperOffice AI. Повторная отправка снова оплачивается. Продолжить?"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Total"
+msgstr "Итого"
+
+#. module: paperoffice_ai
+#: model:ir.model.fields.selection,name:paperoffice_ai.selection__res_config_settings__paperoffice_model__ultra-pro-max
+msgid "Ultra"
+msgstr "Ultra"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "VAT"
+msgstr "НДС"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Vendor has no bank account on file. Verify the IBAN before paying."
+msgstr "У поставщика нет банковского счета в базе данных. Проверьте IBAN перед оплатой."
+
+#. module: paperoffice_ai
+#: model:ir.model.fields,help:paperoffice_ai.field_res_config_settings__paperoffice_enabled
+msgid "When enabled, the attached document of a vendor bill is sent to PaperOffice AI for extraction when a user clicks the button. Nothing is sent automatically. No specific plan is required. Usage is billed to your PaperOffice AI account as usual."
+msgstr "Если включено, прикреплённый документ счёта поставщика отправляется в PaperOffice AI для извлечения данных при нажатии пользователем кнопки. Ничего не отправляется автоматически. Конкретный тарифный план не требуется. Использование оплачивается, как обычно, через ваш аккаунт PaperOffice AI."
+
+#. module: paperoffice_ai
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.res_config_settings_view_form_paperoffice
+msgid "po_ut_..."
+msgstr "po_ut_..."
+

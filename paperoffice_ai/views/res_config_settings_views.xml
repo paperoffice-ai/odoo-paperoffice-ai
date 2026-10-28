@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_paperoffice" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.paperoffice</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="account.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//app[@name='account']" position="inside">
+                <block title="PaperOffice AI" name="paperoffice_ai_setting_container">
+                    <setting id="paperoffice_ai_enabled" string="Read vendor bills with PaperOffice AI (paid)"
+                             help="Sends the attached document of a vendor bill to PaperOffice AI when a user clicks the button. Nothing is sent automatically. No specific plan is required. Usage is billed to your PaperOffice AI account as usual.">
+                        <field name="paperoffice_enabled"/>
+                        <div class="content-group" invisible="not paperoffice_enabled">
+                            <div class="row mt8">
+                                <label for="paperoffice_api_key" class="col-lg-4 o_light_label"/>
+                                <field name="paperoffice_api_key" password="True" placeholder="po_ut_..."/>
+                            </div>
+                            <div class="row">
+                                <label for="paperoffice_model" class="col-lg-4 o_light_label"/>
+                                <field name="paperoffice_model"/>
+                            </div>
+                            <div class="mt8 text-muted">
+                                Create a User token (po_ut_...) under Account &gt; API in PaperOffice AI.
+                            </div>
+                        </div>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>

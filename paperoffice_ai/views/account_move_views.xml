@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_move_form_paperoffice" model="ir.ui.view">
+        <field name="name">account.move.form.paperoffice</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <field name="paperoffice_enabled" invisible="1"/>
+                <button name="action_paperoffice_extract" type="object" string="Read with PaperOffice AI"
+                        groups="account.group_account_invoice"
+                        confirm="The attached document will be sent to PaperOffice AI. Continue?"
+                        invisible="not paperoffice_enabled or state != 'draft' or paperoffice_state"
+                        data-hotkey="shift+p"/>
+                <button name="action_paperoffice_resend" type="object" string="Read again with PaperOffice AI"
+                        groups="account.group_account_invoice"
+                        confirm="This bill was already sent to PaperOffice AI. Please check the result in PaperOffice AI first. Sending again is billed again. Continue?"
+                        invisible="not paperoffice_enabled or state != 'draft' or paperoffice_state not in ('done', 'error')"/>
+                <button name="action_paperoffice_refresh" type="object" string="Check PaperOffice AI result"
+                        groups="account.group_account_invoice"
+                        invisible="paperoffice_state != 'queued'"/>
+            </xpath>
+            <xpath expr="//sheet" position="before">
+                <div class="alert alert-info mb-0" role="status" invisible="paperoffice_state not in ('sending', 'queued')">
+                    PaperOffice AI is reading the attached document. The bill is filled automatically when it is done.
+                </div>
+                <div class="alert alert-warning mb-0" role="alert" invisible="not paperoffice_warnings">
+                    <field name="paperoffice_warnings"/>
+                </div>
+            </xpath>
+            <xpath expr="//field[@name='ref']" position="after">
+                <field name="paperoffice_state" invisible="not paperoffice_state"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_in_invoice_bill_tree_paperoffice" model="ir.ui.view">
+        <field name="name">account.move.bill.tree.paperoffice</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_in_invoice_bill_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button name="action_paperoffice_extract" type="object" string="Read with PaperOffice AI"
+                        groups="account.group_account_invoice"
+                        confirm="The attached documents of the selected bills that were not sent yet will be sent to PaperOffice AI (at most 20). Continue?"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

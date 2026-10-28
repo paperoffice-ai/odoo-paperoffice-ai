@@ -1,0 +1,71 @@
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan">PaperOffice AI for Vendor Bills</h2>
+        <h3 class="oe_slogan">Read supplier invoices and fill draft vendor bills in Odoo</h3>
+        <p>
+            Attach a supplier invoice (PDF or image) to a draft vendor bill and click
+            <b>Read with PaperOffice AI</b>. PaperOffice AI extracts supplier, invoice number,
+            dates, amounts, line items and the IBAN, and fills the empty fields of the bill.
+            Fields you already filled are never overwritten. The currency is only set while the bill
+            has no lines and still uses the company currency.
+        </p>
+        <img src="screenshot_bill.png" class="img img-fluid" alt="Vendor bill filled by PaperOffice AI"/>
+        <p>Document processing (OCR, extraction, classification) runs on PaperOffice's own hardware in its own data center in Navarra, Spain (EU), without external AI providers.</p>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h3>What the module does</h3>
+        <ul>
+            <li>Matches the vendor by VAT number or exact company name.</li>
+            <li>Fills vendor reference, invoice date and due date if they are empty, and the currency if the bill has no lines yet.</li>
+            <li>Creates bill lines from the invoice line items, or one line with the net amount, with the purchase tax that matches the VAT rate on the document.</li>
+            <li>Posts the extracted values to the chatter of the bill.</li>
+            <li>Sending takes a few seconds. The result is fetched in the background by a scheduled action and the bill is filled when it is ready.</li>
+            <li>Also available in the vendor bill list for up to 20 draft bills at once.</li>
+            <li>A bill is sent only once. Sending it again needs the separate "Read again" button and a confirmation.</li>
+            <li>Only users with billing rights can send documents.</li>
+        </ul>
+        <h3>Checks before you pay</h3>
+        <ul>
+            <li>Net plus VAT on the document matches the document total.</li>
+            <li>Bill total matches the document total after taxes are applied.</li>
+            <li>Possible duplicate: Odoo's own duplicate warning works as soon as vendor and reference are filled.</li>
+            <li>IBAN on the document is one of the vendor's known bank accounts.</li>
+        </ul>
+        <p>The checks only show warnings on the bill. Nothing is confirmed or paid automatically.</p>
+        <img src="screenshot_iban_check.png" class="img img-fluid" alt="Warning: IBAN differs from the vendor's known bank account"/>
+        <img src="screenshot_new_vendor.png" class="img img-fluid" alt="Warning: vendor not found"/>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h3>Setup</h3>
+        <ol>
+            <li>Create a PaperOffice AI account at <a href="https://paperoffice.ai">paperoffice.ai</a>.</li>
+            <li>Create a User token (po_ut_...) under Account &gt; API.</li>
+            <li>In Odoo, open Accounting &gt; Configuration &gt; Settings &gt; PaperOffice AI, switch the feature on and paste the token.</li>
+        </ol>
+        <img src="screenshot_settings.png" class="img img-fluid" alt="PaperOffice AI settings in Odoo Accounting"/>
+        <p>
+            No specific plan is required. Usage is billed to your PaperOffice AI account as usual.
+            The feature is off until an administrator switches it on, and documents are only sent
+            when a user clicks the button.
+        </p>
+        <h3>Limitations and manual attention</h3>
+        <ul>
+            <li>New vendors are not created automatically. If the vendor is not found, the bill shows a warning.</li>
+            <li>Taxes on created lines are set from the VAT rate on the document when a matching purchase tax exists. Otherwise, or with several rates, the bill shows a warning. Review the taxes before confirming.</li>
+            <li>Only draft vendor bills and refunds are processed.</li>
+        </ul>
+        <h3>Data protection</h3>
+        <p>
+            Only the attached document of the selected bill is sent to PaperOffice AI.
+            See the <a href="https://paperoffice.ai/en/privacy/">PaperOffice AI privacy policy</a>.
+        </p>
+        <h3>Support</h3>
+        <p>API documentation: <a href="https://api.paperoffice.ai/latest/docs/llms.txt">api.paperoffice.ai/latest/docs</a></p>
+    </div>
+</section>
