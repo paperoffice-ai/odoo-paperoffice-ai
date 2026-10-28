@@ -12,7 +12,9 @@ from odoo import _, api, fields, models
 from odoo.exceptions import UserError
 from odoo.tools import html_escape
 
-from .paperoffice_client import PaperOfficeClient, PaperOfficeNotReached, PaperOfficeResultUnknown, extract_fields
+from .paperoffice_client import (
+    PaperOfficeAuthError, PaperOfficeClient, PaperOfficeNotReached, PaperOfficeResultUnknown, extract_fields,
+)
 
 _logger = logging.getLogger(__name__)
 
@@ -22,6 +24,8 @@ AMOUNT_TOLERANCE = 0.02
 TAX_RATE_TOLERANCE = 0.05
 MAX_BATCH = 20
 SENDING_STALE_MINUTES = 15
+# Claimed but not sent yet: a full batch of 20 bills with 60 s timeouts each takes at most 20 minutes.
+CLAIM_STALE_MINUTES = 30
 QUEUED_MAX_HOURS = 24
 
 
@@ -156,11 +160,25 @@ class AccountMove(models.Model):
         if not todo:
             return True
         client = PaperOfficeClient(self.env)
+        # Previous state of each bill, restored if nothing is accepted (a resend must not lose "done").
+        previous = {
+            move.id: {
+                "paperoffice_state": move.paperoffice_state or False,
+                "paperoffice_job_id": move.paperoffice_job_id or False,
+                "paperoffice_warnings": move.paperoffice_warnings or False,
+                "paperoffice_sent_at": move.paperoffice_sent_at or False,
+            }
+            for move, _att in todo
+        }
         # 2. Claim all bills in ONE commit; a parallel selection then skips them.
         claimed = self._paperoffice_claim([move.id for move, _att in todo], resend)
         todo = [(move, att) for move, att in todo if move.id in claimed]
         # 3. Send one by one; each result is committed right away.
         for index, (move, attachment) in enumerate(todo):
+            # Set the send time right before this bill is sent, and only while the bill is still ours: the cron
+            # releases claims older than 30 minutes, after which another click may have claimed it again.
+            if not move._paperoffice_take_turn():
+                continue
             try:
                 job_id = client.submit_invoice(attachment.name, base64.b64decode(attachment.datas), attachment.mimetype)
             except PaperOfficeResultUnknown as err:
@@ -169,17 +187,36 @@ class AccountMove(models.Model):
                 move._paperoffice_commit()
                 continue
             except UserError as err:
-                # Nothing was accepted for this bill: release it and all bills not sent yet.
-                rest = self.browse([m.id for m, _att in todo[index:]])
-                rest.write({"paperoffice_state": False, "paperoffice_sent_at": False})
-                rest._paperoffice_commit()
-                if index and isinstance(err, PaperOfficeNotReached):
-                    raise UserError(_("PaperOffice AI could not be reached. The remaining bills were not sent. Please try again later."))
+                # Nothing was accepted for this bill: restore it and all bills not sent yet.
+                rest = [move] + [m for m, _att in todo[index + 1:]
+                                 if m.paperoffice_state == "sending" and not m.paperoffice_sent_at]
+                for pending in rest:
+                    pending.write(previous[pending.id])
+                self.browse([m.id for m in rest])._paperoffice_commit()
+                if index:
+                    raise UserError(_(
+                        "%(error)s\n%(sent)s bill(s) were sent. These bills were not sent: %(names)s",
+                        error=str(err), sent=index, names=", ".join(m.display_name for m in rest),
+                    ))
                 raise
             move.write({"paperoffice_job_id": job_id, "paperoffice_state": "queued"})
             move.message_post(body=_("Sent %s to PaperOffice AI for extraction.", attachment.name))
             move._paperoffice_commit()
         return True
+
+    def _paperoffice_take_turn(self):
+        """Atomically mark this claimed bill as being sent now. False if it is no longer ours."""
+        self.ensure_one()
+        self.flush_recordset()
+        self.env.cr.execute(
+            "UPDATE account_move SET paperoffice_sent_at = (now() at time zone 'UTC') "
+            "WHERE id = %s AND paperoffice_state = 'sending' AND paperoffice_sent_at IS NULL RETURNING id",
+            [self.id],
+        )
+        mine = bool(self.env.cr.fetchall())
+        self.invalidate_recordset(["paperoffice_state", "paperoffice_sent_at"])
+        self._paperoffice_commit()
+        return mine
 
     def _paperoffice_claim(self, move_ids, resend):
         """Atomically set the bills to 'sending' and return the ids that were really claimed."""
@@ -189,13 +226,13 @@ class AccountMove(models.Model):
         self.flush_model()
         self.env.cr.execute(
             "UPDATE account_move SET paperoffice_state = 'sending', paperoffice_job_id = NULL, "
-            "paperoffice_warnings = NULL, paperoffice_sent_at = (now() at time zone 'UTC') "
+            "paperoffice_warnings = NULL, paperoffice_sent_at = NULL, write_date = (now() at time zone 'UTC') "
             "WHERE id IN %s AND (" + allowed + ") RETURNING id",
             [tuple(move_ids)],
         )
         claimed = {row[0] for row in self.env.cr.fetchall()}
         self.browse(move_ids).invalidate_recordset(
-            ["paperoffice_state", "paperoffice_job_id", "paperoffice_warnings", "paperoffice_sent_at"]
+            ["paperoffice_state", "paperoffice_job_id", "paperoffice_warnings", "paperoffice_sent_at", "write_date"]
         )
         self._paperoffice_commit()
         return claimed
@@ -210,6 +247,13 @@ class AccountMove(models.Model):
     # ------------------------------------------------------------------
     @api.model
     def _cron_paperoffice_poll(self):
+        # Claimed but never sent (the send was interrupted before the request): nothing was charged.
+        unclaimed = fields.Datetime.now() - timedelta(minutes=CLAIM_STALE_MINUTES)
+        orphans = self.search([("paperoffice_state", "=", "sending"), ("paperoffice_sent_at", "=", False),
+                               ("write_date", "<", unclaimed)])
+        if orphans:
+            orphans.write({"paperoffice_state": False})
+            orphans._paperoffice_commit()
         stale = fields.Datetime.now() - timedelta(minutes=SENDING_STALE_MINUTES)
         for move in self.search([("paperoffice_state", "=", "sending"), ("paperoffice_sent_at", "<", stale)]):
             message = _(
@@ -255,6 +299,14 @@ class AccountMove(models.Model):
         self.ensure_one()
         try:
             body = client.get_job(self.paperoffice_job_id)
+        except PaperOfficeAuthError as err:
+            if self.paperoffice_sent_at and self.paperoffice_sent_at < expired:
+                # The 24-hour limit also applies while the key is rejected.
+                self._paperoffice_expire()
+            elif self.paperoffice_warnings != str(err):
+                self.write({"paperoffice_warnings": str(err)})
+                self.message_post(body=html_escape(str(err)))
+            return None
         except UserError as err:
             self.write({"paperoffice_state": "error", "paperoffice_warnings": str(err)})
             self.message_post(body=html_escape(str(err)))
@@ -269,9 +321,16 @@ class AccountMove(models.Model):
             return data
         elif self.paperoffice_sent_at and self.paperoffice_sent_at < expired:
             # No final answer within the time limit (network errors and running jobs alike).
-            self.write({"paperoffice_state": "error"})
-            self.message_post(body=_("PaperOffice AI did not answer in time. Please try again."))
+            self._paperoffice_expire()
         return None
+
+    def _paperoffice_expire(self):
+        message = _(
+            "PaperOffice AI did not finish within 24 hours. Please check the job in PaperOffice AI "
+            "before sending the bill again."
+        )
+        self.write({"paperoffice_state": "error", "paperoffice_warnings": message})
+        self.message_post(body=message)
 
     def _paperoffice_apply_result(self, data):
         self.ensure_one()

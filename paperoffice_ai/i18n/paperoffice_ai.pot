@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 17.0-20260908\n"
+"Project-Id-Version: Odoo Server 18.0-20261015\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-28 11:11+0000\n"
-"PO-Revision-Date: 2026-10-28 11:11+0000\n"
+"POT-Creation-Date: 2026-10-28 16:01+0000\n"
+"PO-Revision-Date: 2026-10-28 16:01+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,14 @@ msgstr ""
 #. module: paperoffice_ai
 #. odoo-python
 #: code:addons/paperoffice_ai/models/account_move.py:0
-#, python-format
+msgid ""
+"%(error)s\n"
+"%(sent)s bill(s) were sent. These bills were not sent: %(names)s"
+msgstr ""
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
 msgid "Attach the supplier invoice (PDF or image) to %s first."
 msgstr ""
 
@@ -30,7 +37,6 @@ msgstr ""
 #. module: paperoffice_ai
 #. odoo-python
 #: code:addons/paperoffice_ai/models/account_move.py:0
-#, python-format
 msgid "Bill total differs from the document total. Check taxes and lines."
 msgstr ""
 
@@ -53,7 +59,6 @@ msgstr ""
 #. module: paperoffice_ai
 #. odoo-python
 #: code:addons/paperoffice_ai/models/account_move.py:0
-#, python-format
 msgid "Currency %s on the document is not active in Odoo."
 msgstr ""
 
@@ -70,35 +75,30 @@ msgstr ""
 #. module: paperoffice_ai
 #. odoo-python
 #: code:addons/paperoffice_ai/models/account_move.py:0
-#, python-format
 msgid "IBAN"
 msgstr ""
 
 #. module: paperoffice_ai
 #. odoo-python
 #: code:addons/paperoffice_ai/models/account_move.py:0
-#, python-format
 msgid "IBAN on the document is not one of the vendor's known bank accounts."
 msgstr ""
 
 #. module: paperoffice_ai
 #. odoo-python
 #: code:addons/paperoffice_ai/models/account_move.py:0
-#, python-format
 msgid "Invoice %s"
 msgstr ""
 
 #. module: paperoffice_ai
 #. odoo-python
 #: code:addons/paperoffice_ai/models/account_move.py:0
-#, python-format
 msgid "Invoice date"
 msgstr ""
 
 #. module: paperoffice_ai
 #. odoo-python
 #: code:addons/paperoffice_ai/models/account_move.py:0
-#, python-format
 msgid "Invoice number"
 msgstr ""
 
@@ -110,14 +110,12 @@ msgstr ""
 #. module: paperoffice_ai
 #. odoo-python
 #: code:addons/paperoffice_ai/models/account_move.py:0
-#, python-format
 msgid "Net"
 msgstr ""
 
 #. module: paperoffice_ai
 #. odoo-python
 #: code:addons/paperoffice_ai/models/account_move.py:0
-#, python-format
 msgid "Net plus VAT on the document does not match the total."
 msgstr ""
 
@@ -125,7 +123,6 @@ msgstr ""
 #. odoo-python
 #: code:addons/paperoffice_ai/models/account_move.py:0
 #: code:addons/paperoffice_ai/models/paperoffice_client.py:0
-#, python-format
 msgid ""
 "No answer from PaperOffice AI. The document may have been received. Please "
 "check in PaperOffice AI before sending it again."
@@ -134,21 +131,18 @@ msgstr ""
 #. module: paperoffice_ai
 #. odoo-python
 #: code:addons/paperoffice_ai/models/account_move.py:0
-#, python-format
 msgid "No purchase tax with %s %% found. Set the taxes on the lines."
 msgstr ""
 
 #. module: paperoffice_ai
 #. odoo-python
 #: code:addons/paperoffice_ai/models/account_move.py:0
-#, python-format
 msgid "Only draft vendor bills and refunds can be read with PaperOffice AI."
 msgstr ""
 
 #. module: paperoffice_ai
 #: model:ir.model.fields,field_description:paperoffice_ai.field_account_bank_statement_line__paperoffice_state
 #: model:ir.model.fields,field_description:paperoffice_ai.field_account_move__paperoffice_state
-#: model:ir.model.fields,field_description:paperoffice_ai.field_account_payment__paperoffice_state
 #: model_terms:ir.ui.view,arch_db:paperoffice_ai.res_config_settings_view_form_paperoffice
 msgid "PaperOffice AI"
 msgstr ""
@@ -161,21 +155,18 @@ msgstr ""
 #. module: paperoffice_ai
 #: model:ir.model.fields,field_description:paperoffice_ai.field_account_bank_statement_line__paperoffice_enabled
 #: model:ir.model.fields,field_description:paperoffice_ai.field_account_move__paperoffice_enabled
-#: model:ir.model.fields,field_description:paperoffice_ai.field_account_payment__paperoffice_enabled
 msgid "PaperOffice AI available"
 msgstr ""
 
 #. module: paperoffice_ai
 #: model:ir.model.fields,field_description:paperoffice_ai.field_account_bank_statement_line__paperoffice_warnings
 #: model:ir.model.fields,field_description:paperoffice_ai.field_account_move__paperoffice_warnings
-#: model:ir.model.fields,field_description:paperoffice_ai.field_account_payment__paperoffice_warnings
 msgid "PaperOffice AI checks"
 msgstr ""
 
 #. module: paperoffice_ai
 #. odoo-python
 #: code:addons/paperoffice_ai/models/paperoffice_client.py:0
-#, python-format
 msgid ""
 "PaperOffice AI could not be reached. Nothing was sent. Please try again "
 "later."
@@ -184,30 +175,20 @@ msgstr ""
 #. module: paperoffice_ai
 #. odoo-python
 #: code:addons/paperoffice_ai/models/account_move.py:0
-#, python-format
-msgid ""
-"PaperOffice AI could not be reached. The remaining bills were not sent. "
-"Please try again later."
-msgstr ""
-
-#. module: paperoffice_ai
-#. odoo-python
-#: code:addons/paperoffice_ai/models/account_move.py:0
-#, python-format
 msgid "PaperOffice AI could not read the document (%s)."
 msgstr ""
 
 #. module: paperoffice_ai
 #. odoo-python
 #: code:addons/paperoffice_ai/models/account_move.py:0
-#, python-format
-msgid "PaperOffice AI did not answer in time. Please try again."
+msgid ""
+"PaperOffice AI did not finish within 24 hours. Please check the job in "
+"PaperOffice AI before sending the bill again."
 msgstr ""
 
 #. module: paperoffice_ai
 #. odoo-python
 #: code:addons/paperoffice_ai/models/account_move.py:0
-#, python-format
 msgid "PaperOffice AI extracted:"
 msgstr ""
 
@@ -221,7 +202,6 @@ msgstr ""
 #. module: paperoffice_ai
 #. odoo-python
 #: code:addons/paperoffice_ai/models/account_move.py:0
-#, python-format
 msgid ""
 "PaperOffice AI is switched off. An administrator can switch it on in the "
 "Accounting settings."
@@ -230,7 +210,6 @@ msgstr ""
 #. module: paperoffice_ai
 #: model:ir.model.fields,field_description:paperoffice_ai.field_account_bank_statement_line__paperoffice_job_id
 #: model:ir.model.fields,field_description:paperoffice_ai.field_account_move__paperoffice_job_id
-#: model:ir.model.fields,field_description:paperoffice_ai.field_account_payment__paperoffice_job_id
 msgid "PaperOffice AI job"
 msgstr ""
 
@@ -242,7 +221,15 @@ msgstr ""
 #. module: paperoffice_ai
 #. odoo-python
 #: code:addons/paperoffice_ai/models/paperoffice_client.py:0
-#, python-format
+msgid ""
+"PaperOffice AI rejected the API key while fetching the result. Enter a valid"
+" User token (po_ut_...) in the Accounting settings. The bill keeps waiting "
+"for its result."
+msgstr ""
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/paperoffice_client.py:0
 msgid ""
 "PaperOffice AI rejected the API key. Create a User token (po_ut_...) under "
 "Account > API and enter it in the Accounting settings."
@@ -251,21 +238,18 @@ msgstr ""
 #. module: paperoffice_ai
 #: model:ir.model.fields,field_description:paperoffice_ai.field_account_bank_statement_line__paperoffice_result
 #: model:ir.model.fields,field_description:paperoffice_ai.field_account_move__paperoffice_result
-#: model:ir.model.fields,field_description:paperoffice_ai.field_account_payment__paperoffice_result
 msgid "PaperOffice AI result"
 msgstr ""
 
 #. module: paperoffice_ai
 #. odoo-python
 #: code:addons/paperoffice_ai/models/paperoffice_client.py:0
-#, python-format
 msgid "PaperOffice AI returned an error (%s)."
 msgstr ""
 
 #. module: paperoffice_ai
 #. odoo-python
 #: code:addons/paperoffice_ai/models/account_move.py:0
-#, python-format
 msgid "PaperOffice AI returned no invoice fields."
 msgstr ""
 
@@ -277,21 +261,18 @@ msgstr ""
 #. module: paperoffice_ai
 #. odoo-python
 #: code:addons/paperoffice_ai/models/account_move.py:0
-#, python-format
 msgid "Please check:"
 msgstr ""
 
 #. module: paperoffice_ai
 #. odoo-python
 #: code:addons/paperoffice_ai/models/paperoffice_client.py:0
-#, python-format
 msgid "Please enter your PaperOffice AI API key in the Accounting settings."
 msgstr ""
 
 #. module: paperoffice_ai
 #. odoo-python
 #: code:addons/paperoffice_ai/models/account_move.py:0
-#, python-format
 msgid "Please select at most %s bills at once."
 msgstr ""
 
@@ -342,35 +323,30 @@ msgstr ""
 #. module: paperoffice_ai
 #. odoo-python
 #: code:addons/paperoffice_ai/models/account_move.py:0
-#, python-format
 msgid "Sent %s to PaperOffice AI for extraction."
 msgstr ""
 
 #. module: paperoffice_ai
 #: model:ir.model.fields,field_description:paperoffice_ai.field_account_bank_statement_line__paperoffice_sent_at
 #: model:ir.model.fields,field_description:paperoffice_ai.field_account_move__paperoffice_sent_at
-#: model:ir.model.fields,field_description:paperoffice_ai.field_account_payment__paperoffice_sent_at
 msgid "Sent to PaperOffice AI"
 msgstr ""
 
 #. module: paperoffice_ai
 #. odoo-python
 #: code:addons/paperoffice_ai/models/account_move.py:0
-#, python-format
 msgid "Several VAT rates on the document. Set the taxes per line."
 msgstr ""
 
 #. module: paperoffice_ai
 #. odoo-python
 #: code:addons/paperoffice_ai/models/account_move.py:0
-#, python-format
 msgid "Supplier"
 msgstr ""
 
 #. module: paperoffice_ai
 #. odoo-python
 #: code:addons/paperoffice_ai/models/account_move.py:0
-#, python-format
 msgid "Supplier '%s' not found. Please select or create the vendor."
 msgstr ""
 
@@ -389,14 +365,12 @@ msgstr ""
 #. module: paperoffice_ai
 #. odoo-python
 #: code:addons/paperoffice_ai/models/account_move.py:0
-#, python-format
 msgid "The bill is no longer a draft. Nothing was changed."
 msgstr ""
 
 #. module: paperoffice_ai
 #. odoo-python
 #: code:addons/paperoffice_ai/models/account_move.py:0
-#, python-format
 msgid ""
 "The result was saved but could not be applied to the bill. Please fill the "
 "bill manually."
@@ -404,8 +378,15 @@ msgstr ""
 
 #. module: paperoffice_ai
 #. odoo-python
+#: code:addons/paperoffice_ai/models/paperoffice_client.py:0
+msgid ""
+"The stored PaperOffice AI job id is not valid. Please check the bill in "
+"PaperOffice AI."
+msgstr ""
+
+#. module: paperoffice_ai
+#. odoo-python
 #: code:addons/paperoffice_ai/models/account_move.py:0
-#, python-format
 msgid ""
 "These bills are being sent to PaperOffice AI right now. Please wait a "
 "moment."
@@ -421,7 +402,6 @@ msgstr ""
 #. module: paperoffice_ai
 #. odoo-python
 #: code:addons/paperoffice_ai/models/account_move.py:0
-#, python-format
 msgid "Total"
 msgstr ""
 
@@ -433,14 +413,12 @@ msgstr ""
 #. module: paperoffice_ai
 #. odoo-python
 #: code:addons/paperoffice_ai/models/account_move.py:0
-#, python-format
 msgid "VAT"
 msgstr ""
 
 #. module: paperoffice_ai
 #. odoo-python
 #: code:addons/paperoffice_ai/models/account_move.py:0
-#, python-format
 msgid "Vendor has no bank account on file. Verify the IBAN before paying."
 msgstr ""
 

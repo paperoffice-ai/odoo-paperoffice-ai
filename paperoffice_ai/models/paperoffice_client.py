@@ -1,4 +1,5 @@
 import logging
+import re
 from urllib.parse import urlparse
 
 import requests
@@ -10,6 +11,8 @@ _logger = logging.getLogger(__name__)
 
 DEFAULT_BASE_URL = "https://api.paperoffice.ai/latest"
 TIMEOUT = 60
+# Real job ids contain dots (poai-job_150_1793186561.2367_...); nothing else may reach the URL path.
+JOB_ID_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$")
 
 
 class PaperOfficeResultUnknown(UserError):
@@ -18,6 +21,15 @@ class PaperOfficeResultUnknown(UserError):
 
 class PaperOfficeNotReached(UserError):
     """Nothing was sent (connection could not be opened)."""
+
+
+class PaperOfficeAuthError(UserError):
+    """The API key was rejected while fetching a job; the job itself is fine."""
+
+
+def valid_job_id(job_id):
+    # fullmatch: "$" alone would let a trailing newline through (30, 28.10.)
+    return bool(job_id) and bool(JOB_ID_RE.fullmatch(str(job_id))) and ".." not in str(job_id)
 
 
 def _allowed_base_url(url):
@@ -45,7 +57,7 @@ class PaperOfficeClient:
         return {
             "Authorization": "Bearer %s" % self.api_key,
             "Accept": "application/json",
-            "User-Agent": "Mozilla/5.0 (compatible; PaperOffice-AI-Odoo/18.0.1.2.1)",
+            "User-Agent": "Mozilla/5.0 (compatible; PaperOffice-AI-Odoo/18.0.1.3.1)",
         }
 
     def _check(self, response):
@@ -90,8 +102,8 @@ class PaperOfficeClient:
             raise self._result_unknown()
         body = self._check(response)
         job_id = body.get("job_id") or (body.get("job") or {}).get("job_id")
-        if not job_id:
-            _logger.warning("PaperOffice AI submit returned no job id")
+        if not valid_job_id(job_id):
+            _logger.warning("PaperOffice AI submit returned no valid job id")
             raise self._result_unknown()
         return job_id
 
@@ -103,6 +115,8 @@ class PaperOfficeClient:
 
     def get_job(self, job_id):
         """Fetch a job. Returns None on a network error (the next poll retries)."""
+        if not valid_job_id(job_id):
+            raise UserError(_("The stored PaperOffice AI job id is not valid. Please check the bill in PaperOffice AI."))
         try:
             response = requests.get(
                 "%s/job/get/%s" % (self.base_url, job_id),
@@ -112,8 +126,14 @@ class PaperOfficeClient:
         except requests.exceptions.RequestException as err:
             _logger.info("PaperOffice AI poll failed, retrying later: %s", type(err).__name__)
             return None
-        if response.status_code >= 500 or response.status_code in (401, 403, 429):
-            # Temporary or key problem: the job itself is fine, ask again later.
+        if response.status_code in (401, 403):
+            # The job itself is fine; the key must be fixed before the result can be fetched.
+            raise PaperOfficeAuthError(_(
+                "PaperOffice AI rejected the API key while fetching the result. Enter a valid User token "
+                "(po_ut_...) in the Accounting settings. The bill keeps waiting for its result."
+            ))
+        if response.status_code >= 500 or response.status_code == 429:
+            # Temporary problem: the job itself is fine, ask again later.
             _logger.info("PaperOffice AI poll returned HTTP %s, retrying later", response.status_code)
             return None
         return self._check(response)

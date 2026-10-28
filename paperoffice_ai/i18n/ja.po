@@ -15,6 +15,13 @@ msgstr ""
 #. odoo-python
 #: code:addons/paperoffice_ai/models/account_move.py:0
 #, python-format
+msgid "%(error)s\n%(sent)s bill(s) were sent. These bills were not sent: %(names)s"
+msgstr "%(error)s\n%(sent)s 件の請求書が送信されました。次の請求書は送信されていません: %(names)s"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
 msgid "Attach the supplier invoice (PDF or image) to %s first."
 msgstr "まず、サプライヤーの請求書（PDF または画像）を %s に添付してください。"
 
@@ -176,13 +183,6 @@ msgstr "PaperOffice AI に接続できませんでした。何も送られてい
 #. odoo-python
 #: code:addons/paperoffice_ai/models/account_move.py:0
 #, python-format
-msgid "PaperOffice AI could not be reached. The remaining bills were not sent. Please try again later."
-msgstr "PaperOffice AI に接続できませんでした。残りの請求書は送信されていません。後でもう一度お試しください。"
-
-#. module: paperoffice_ai
-#. odoo-python
-#: code:addons/paperoffice_ai/models/account_move.py:0
-#, python-format
 msgid "PaperOffice AI could not read the document (%s)."
 msgstr "PaperOffice AI は文書を読み取ることに失敗しました (%s)。"
 
@@ -190,8 +190,8 @@ msgstr "PaperOffice AI は文書を読み取ることに失敗しました (%s)�
 #. odoo-python
 #: code:addons/paperoffice_ai/models/account_move.py:0
 #, python-format
-msgid "PaperOffice AI did not answer in time. Please try again."
-msgstr "PaperOffice AI が期限内に回答しませんでした。もう一度お試しください。"
+msgid "PaperOffice AI did not finish within 24 hours. Please check the job in PaperOffice AI before sending the bill again."
+msgstr "PaperOffice AI は 24 時間以内に完了しませんでした。請求書を再送信する前に、PaperOffice AI でジョブを確認してください。"
 
 #. module: paperoffice_ai
 #. odoo-python
@@ -223,6 +223,13 @@ msgstr "PaperOffice AI ジョブ"
 #: model:ir.model.fields,field_description:paperoffice_ai.field_res_config_settings__paperoffice_model
 msgid "PaperOffice AI model"
 msgstr "PaperOffice AI モデル"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/paperoffice_client.py:0
+#, python-format
+msgid "PaperOffice AI rejected the API key while fetching the result. Enter a valid User token (po_ut_...) in the Accounting settings. The bill keeps waiting for its result."
+msgstr "PaperOffice AI は結果の取得時に API キーを拒否しました。会計設定で有効なユーザートークン (po_ut_...) を入力してください。請求書は引き続き結果を待っています。"
 
 #. module: paperoffice_ai
 #. odoo-python
@@ -377,6 +384,13 @@ msgstr "この請求書はもはや下書きではありません。変更はあ
 #, python-format
 msgid "The result was saved but could not be applied to the bill. Please fill the bill manually."
 msgstr "結果は保存されましたが、請求書に反映できませんでした。請求書は手動で入力してください。"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/paperoffice_client.py:0
+#, python-format
+msgid "The stored PaperOffice AI job id is not valid. Please check the bill in PaperOffice AI."
+msgstr "保存されている PaperOffice AI ジョブ ID が有効ではありません。PaperOffice AI で請求書を確認してください。"
 
 #. module: paperoffice_ai
 #. odoo-python

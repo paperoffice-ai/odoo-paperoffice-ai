@@ -15,6 +15,13 @@ msgstr ""
 #. odoo-python
 #: code:addons/paperoffice_ai/models/account_move.py:0
 #, python-format
+msgid "%(error)s\n%(sent)s bill(s) were sent. These bills were not sent: %(names)s"
+msgstr "%(error)s\n%(sent)s 건의 송장이 전송되었습니다. 다음 송장은 전송되지 않았습니다: %(names)s"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
 msgid "Attach the supplier invoice (PDF or image) to %s first."
 msgstr "공급업체 송장 (PDF 또는 이미지) 을 %s 에 먼저 첨부하세요."
 
@@ -176,13 +183,6 @@ msgstr "PaperOffice AI에 연결할 수 없습니다. 아무것도 전송되지 
 #. odoo-python
 #: code:addons/paperoffice_ai/models/account_move.py:0
 #, python-format
-msgid "PaperOffice AI could not be reached. The remaining bills were not sent. Please try again later."
-msgstr "PaperOffice AI에 연결할 수 없습니다. 나머지 송장은 전송되지 않았습니다. 나중에 다시 시도해 주세요."
-
-#. module: paperoffice_ai
-#. odoo-python
-#: code:addons/paperoffice_ai/models/account_move.py:0
-#, python-format
 msgid "PaperOffice AI could not read the document (%s)."
 msgstr "PaperOffice AI가 문서를 읽지 못했습니다 (%s)."
 
@@ -190,8 +190,8 @@ msgstr "PaperOffice AI가 문서를 읽지 못했습니다 (%s)."
 #. odoo-python
 #: code:addons/paperoffice_ai/models/account_move.py:0
 #, python-format
-msgid "PaperOffice AI did not answer in time. Please try again."
-msgstr "PaperOffice AI가 제시간에 응답하지 않았습니다. 다시 시도해 주세요."
+msgid "PaperOffice AI did not finish within 24 hours. Please check the job in PaperOffice AI before sending the bill again."
+msgstr "PaperOffice AI가 24시간 내에 완료되지 않았습니다. 송장을 다시 전송하기 전에 PaperOffice AI에서 작업을 확인해 주십시오."
 
 #. module: paperoffice_ai
 #. odoo-python
@@ -223,6 +223,13 @@ msgstr "PaperOffice AI 작업"
 #: model:ir.model.fields,field_description:paperoffice_ai.field_res_config_settings__paperoffice_model
 msgid "PaperOffice AI model"
 msgstr "PaperOffice AI 모델"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/paperoffice_client.py:0
+#, python-format
+msgid "PaperOffice AI rejected the API key while fetching the result. Enter a valid User token (po_ut_...) in the Accounting settings. The bill keeps waiting for its result."
+msgstr "PaperOffice AI가 결과를 가져오는 동안 API 키를 거부했습니다. 회계 설정에 올바른 사용자 토큰 (po_ut_...)을 입력하십시오. 송장은 결과를 계속 기다리고 있습니다."
 
 #. module: paperoffice_ai
 #. odoo-python
@@ -377,6 +384,13 @@ msgstr "이 송장은 더 이상 초안 상태가 아닙니다. 변경 사항이
 #, python-format
 msgid "The result was saved but could not be applied to the bill. Please fill the bill manually."
 msgstr "결과는 저장되었지만 송장에 적용하지 못했습니다. 송장을 수동으로 입력해 주세요."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/paperoffice_client.py:0
+#, python-format
+msgid "The stored PaperOffice AI job id is not valid. Please check the bill in PaperOffice AI."
+msgstr "저장된 PaperOffice AI 작업 ID가 올바르지 않습니다. PaperOffice AI에서 송장을 확인해 주십시오."
 
 #. module: paperoffice_ai
 #. odoo-python
