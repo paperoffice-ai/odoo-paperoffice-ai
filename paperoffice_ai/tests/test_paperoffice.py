@@ -250,7 +250,7 @@ class TestPaperOffice(AccountTestInvoicingCommon):
         second = self._make_bill()
         side_effect = [_accepted(), requests.exceptions.ConnectTimeout()]
         with patch(POST, side_effect=side_effect) as post:
-            with self.assertRaisesRegex(UserError, "remaining bills"):
+            with self.assertRaisesRegex(UserError, "were not sent"):
                 (self.bill | second).action_paperoffice_extract()
             self.assertEqual(post.call_count, 2)
 
@@ -267,6 +267,7 @@ class TestPaperOffice(AccountTestInvoicingCommon):
         with patch(GET, return_value=_response(200, {"status": "success", "job_status": "processing"})):
             self.env["account.move"]._cron_paperoffice_poll()
         self.assertEqual(self.bill.paperoffice_state, "error")
+        self.assertIn("check the job in PaperOffice AI", self.bill.paperoffice_warnings)
 
     def test_poll_gateway_error_keeps_queued(self):
         self.bill.write({"paperoffice_state": "queued", "paperoffice_job_id": "job-9",
@@ -297,3 +298,134 @@ class TestPaperOffice(AccountTestInvoicingCommon):
         self.assertFalse(warning)
         taxes, warning = self.bill._paperoffice_find_taxes({"_net_amount": 100.0, "_vat_amount": 7.7})
         self.assertEqual(taxes, tax77)
+
+
+    # ------------------------------------------------------------------
+    # v4 (30-SOLL 28.10.)
+    # ------------------------------------------------------------------
+    def test_sent_at_set_right_before_send(self):
+        second = self._make_bill()
+        seen = []
+
+        def post(*args, **kwargs):
+            seen.append((bool(self.bill.paperoffice_sent_at), bool(second.paperoffice_sent_at)))
+            return _accepted("job-%d" % len(seen))
+
+        with patch(POST, side_effect=post):
+            (self.bill | second).action_paperoffice_extract()
+        # While the first bill is sent, the second one is claimed but has no send time yet.
+        self.assertEqual(seen[0], (True, False))
+        self.assertEqual(seen[1], (True, True))
+
+    def test_cron_releases_claim_that_was_never_sent(self):
+        self.env["account.move"]._paperoffice_claim([self.bill.id], False)
+        self.assertEqual(self.bill.paperoffice_state, "sending")
+        self.assertFalse(self.bill.paperoffice_sent_at)
+        self.env["account.move"]._cron_paperoffice_poll()
+        self.assertEqual(self.bill.paperoffice_state, "sending")  # fresh claim stays
+        self.env.cr.execute("UPDATE account_move SET write_date = write_date - interval '1 hour' WHERE id = %s", [self.bill.id])
+        self.bill.invalidate_recordset(["write_date"])
+        self.env["account.move"]._cron_paperoffice_poll()
+        self.assertFalse(self.bill.paperoffice_state)
+        self.assertFalse(self.bill.paperoffice_warnings)
+
+    def test_poll_auth_error_is_visible_and_keeps_waiting(self):
+        self.bill.write({"paperoffice_state": "queued", "paperoffice_job_id": "job-9",
+                         "paperoffice_sent_at": fields.Datetime.now()})
+        before = len(self.bill.message_ids)
+        with patch(GET, return_value=_response(401, {})):
+            self.env["account.move"]._cron_paperoffice_poll()
+            self.env["account.move"]._cron_paperoffice_poll()
+        self.assertEqual(self.bill.paperoffice_state, "queued")
+        self.assertIn("rejected the API key", self.bill.paperoffice_warnings)
+        self.assertEqual(len(self.bill.message_ids), before + 1)  # posted once, not on every poll
+        with patch(GET, return_value=_response(200, COMPLETED)):
+            self.bill.action_paperoffice_refresh()
+        self.assertEqual(self.bill.paperoffice_state, "done")
+
+    def test_resend_rejected_keeps_done(self):
+        self._extract_done(self.bill)
+        self.assertEqual(self.bill.paperoffice_state, "done")
+        job, sent_at = self.bill.paperoffice_job_id, self.bill.paperoffice_sent_at
+        with patch(POST, return_value=_response(400, {"status": "error", "code": "FILE_TOO_LARGE"})):
+            with self.assertRaises(UserError):
+                self.bill.action_paperoffice_resend()
+        self.assertEqual(self.bill.paperoffice_state, "done")
+        self.assertEqual(self.bill.paperoffice_job_id, job)
+        self.assertEqual(self.bill.paperoffice_sent_at, sent_at)
+
+    def test_rejected_mid_list_names_unsent_bills(self):
+        second = self._make_bill()
+        side_effect = [_accepted(), _response(400, {"status": "error", "code": "FILE_TOO_LARGE"})]
+        with patch(POST, side_effect=side_effect):
+            with self.assertRaises(UserError) as caught:
+                (self.bill | second).action_paperoffice_extract()
+        message = str(caught.exception)
+        self.assertIn("were not sent", message)
+        self.assertIn(second.display_name, message)
+        self.assertIn("1 bill(s) were sent", message)
+        # States: assertRaises rolls back to its savepoint in tests; in production each bill is committed.
+
+    def test_real_job_id_with_dot(self):
+        real = "poai-job_150_1793186561.2367_a1b2c3"
+        with patch(POST, return_value=_accepted(real)):
+            self.bill.action_paperoffice_extract()
+        self.assertEqual(self.bill.paperoffice_job_id, real)
+        with patch(GET, return_value=_response(200, COMPLETED)) as get:
+            self.bill.action_paperoffice_refresh()
+        self.assertTrue(get.call_args[0][0].endswith("/job/get/" + real))
+        self.assertEqual(self.bill.paperoffice_state, "done")
+
+    def test_invalid_job_id_is_unknown(self):
+        for bad in ("../job", "job/1", "job 1", "a..b", "-job"):
+            bill = self._make_bill()
+            with patch(POST, return_value=_accepted(bad)):
+                bill.action_paperoffice_extract()
+            self.assertEqual(bill.paperoffice_state, "error")
+            self.assertFalse(bill.paperoffice_job_id)
+            self.assertIn("before sending it again", bill.paperoffice_warnings)
+
+
+    # ------------------------------------------------------------------
+    # v4.1 (30-Rückgabe 28.10.)
+    # ------------------------------------------------------------------
+    def test_take_turn_only_while_claim_is_ours(self):
+        Move = self.env["account.move"]
+        Move._paperoffice_claim([self.bill.id], False)
+        self.assertTrue(self.bill._paperoffice_take_turn())
+        self.assertTrue(self.bill.paperoffice_sent_at)
+        self.assertFalse(self.bill._paperoffice_take_turn())  # second turn: already sending
+        other = self._make_bill()
+        Move._paperoffice_claim([other.id], False)
+        # The cron released the claim (> 30 min), and a new click claimed and started it elsewhere.
+        self.env.cr.execute("UPDATE account_move SET paperoffice_sent_at = now() WHERE id = %s", [other.id])
+        other.invalidate_recordset(["paperoffice_sent_at"])
+        self.assertFalse(other._paperoffice_take_turn())
+
+    def test_bill_lost_to_other_run_is_not_sent(self):
+        second = self._make_bill()
+        original = type(self.bill)._paperoffice_take_turn
+
+        def take_turn(move):
+            if move.id == second.id:
+                return False
+            return original(move)
+
+        with patch(POST, return_value=_accepted()) as post, \
+                patch.object(type(self.bill), "_paperoffice_take_turn", take_turn):
+            (self.bill | second).action_paperoffice_extract()
+        post.assert_called_once()
+        self.assertEqual(self.bill.paperoffice_state, "queued")
+
+    def test_auth_error_still_expires_after_24_hours(self):
+        self.bill.write({"paperoffice_state": "queued", "paperoffice_job_id": "job-9",
+                         "paperoffice_sent_at": fields.Datetime.now() - timedelta(hours=25)})
+        with patch(GET, return_value=_response(401, {})):
+            self.env["account.move"]._cron_paperoffice_poll()
+        self.assertEqual(self.bill.paperoffice_state, "error")
+        self.assertIn("check the job in PaperOffice AI", self.bill.paperoffice_warnings)
+
+    def test_job_id_with_trailing_newline_is_invalid(self):
+        from ..models.paperoffice_client import valid_job_id
+        self.assertTrue(valid_job_id("poai-job_150_1793186561.2367_a1b2c3"))
+        self.assertFalse(valid_job_id("poai-job_150_1\n"))

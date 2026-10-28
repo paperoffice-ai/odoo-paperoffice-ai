@@ -57,7 +57,7 @@
         <h3>Limitations and manual attention</h3>
         <ul>
             <li>New vendors are not created automatically. If the vendor is not found, the bill shows a warning.</li>
-            <li>Taxes on created lines are set from the VAT rate on the document when a matching purchase tax exists. Otherwise, or with several rates, the bill shows a warning. Review the taxes before confirming.</li>
+            <li>Taxes on created lines are set from the VAT rate on the document when a matching purchase tax exists. If a rate other than 0 % is recognised but no matching purchase tax exists, or the document has several rates, the bill shows a warning. If no rate (or 0 % without a matching tax) is recognised, lines are created without taxes. Review the taxes before confirming.</li>
             <li>Only draft vendor bills and refunds are processed.</li>
         </ul>
         <h3>Data protection</h3>

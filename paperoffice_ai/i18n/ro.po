@@ -15,6 +15,13 @@ msgstr ""
 #. odoo-python
 #: code:addons/paperoffice_ai/models/account_move.py:0
 #, python-format
+msgid "%(error)s\n%(sent)s bill(s) were sent. These bills were not sent: %(names)s"
+msgstr "%(error)s\n%(sent)s factură(e) au fost trimise. Aceste facturi nu au fost trimise: %(names)s"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
 msgid "Attach the supplier invoice (PDF or image) to %s first."
 msgstr "Atașați întâi factura furnizorului (PDF sau imagine) la %s."
 
@@ -176,13 +183,6 @@ msgstr "Nu s-a putut stabili legătura cu PaperOffice AI. Nu s-a trimis nimic. V
 #. odoo-python
 #: code:addons/paperoffice_ai/models/account_move.py:0
 #, python-format
-msgid "PaperOffice AI could not be reached. The remaining bills were not sent. Please try again later."
-msgstr "PaperOffice AI nu a putut fi contactat. Facturile rămase nu au fost trimise. Vă rugăm să încercați din nou mai târziu."
-
-#. module: paperoffice_ai
-#. odoo-python
-#: code:addons/paperoffice_ai/models/account_move.py:0
-#, python-format
 msgid "PaperOffice AI could not read the document (%s)."
 msgstr "PaperOffice AI nu a putut citi documentul (%s)."
 
@@ -190,8 +190,8 @@ msgstr "PaperOffice AI nu a putut citi documentul (%s)."
 #. odoo-python
 #: code:addons/paperoffice_ai/models/account_move.py:0
 #, python-format
-msgid "PaperOffice AI did not answer in time. Please try again."
-msgstr "PaperOffice AI nu a răspuns în timp util. Vă rugăm să încercați din nou."
+msgid "PaperOffice AI did not finish within 24 hours. Please check the job in PaperOffice AI before sending the bill again."
+msgstr "PaperOffice AI nu a finalizat în termen de 24 de ore. Vă rugăm să verificați jobul în PaperOffice AI înainte de a retrimite factura."
 
 #. module: paperoffice_ai
 #. odoo-python
@@ -223,6 +223,13 @@ msgstr "Job PaperOffice AI"
 #: model:ir.model.fields,field_description:paperoffice_ai.field_res_config_settings__paperoffice_model
 msgid "PaperOffice AI model"
 msgstr "Model PaperOffice AI"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/paperoffice_client.py:0
+#, python-format
+msgid "PaperOffice AI rejected the API key while fetching the result. Enter a valid User token (po_ut_...) in the Accounting settings. The bill keeps waiting for its result."
+msgstr "PaperOffice AI a respins cheia API la obținerea rezultatului. Introduceți un token Utilizator valid (po_ut_...) în setările Contabilitate. Factura continuă să aștepte rezultatul său."
 
 #. module: paperoffice_ai
 #. odoo-python
@@ -377,6 +384,13 @@ msgstr "Factura nu mai este o schiță. Nu s-a modificat nimic."
 #, python-format
 msgid "The result was saved but could not be applied to the bill. Please fill the bill manually."
 msgstr "Rezultatul a fost salvat, dar nu a putut fi aplicat facturii. Vă rugăm să completați manual factura."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/paperoffice_client.py:0
+#, python-format
+msgid "The stored PaperOffice AI job id is not valid. Please check the bill in PaperOffice AI."
+msgstr "ID-ul jobului PaperOffice AI stocat nu este valid. Vă rugăm să verificați factura din PaperOffice AI."
 
 #. module: paperoffice_ai
 #. odoo-python

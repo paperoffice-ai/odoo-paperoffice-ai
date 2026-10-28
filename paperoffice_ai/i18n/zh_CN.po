@@ -15,6 +15,13 @@ msgstr ""
 #. odoo-python
 #: code:addons/paperoffice_ai/models/account_move.py:0
 #, python-format
+msgid "%(error)s\n%(sent)s bill(s) were sent. These bills were not sent: %(names)s"
+msgstr "%(error)s\n已发送 %(sent)s 张账单。以下账单未发送：%(names)s"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
 msgid "Attach the supplier invoice (PDF or image) to %s first."
 msgstr "请先将供应商发票（PDF 或图片）附加到 %s。"
 
@@ -176,13 +183,6 @@ msgstr "无法联系到 PaperOffice AI，未进行任何发送操作。请稍后
 #. odoo-python
 #: code:addons/paperoffice_ai/models/account_move.py:0
 #, python-format
-msgid "PaperOffice AI could not be reached. The remaining bills were not sent. Please try again later."
-msgstr "无法连接到 PaperOffice AI。其余账单未发送。请稍后重试。"
-
-#. module: paperoffice_ai
-#. odoo-python
-#: code:addons/paperoffice_ai/models/account_move.py:0
-#, python-format
 msgid "PaperOffice AI could not read the document (%s)."
 msgstr "PaperOffice AI 无法读取该文件 (%s)。"
 
@@ -190,8 +190,8 @@ msgstr "PaperOffice AI 无法读取该文件 (%s)。"
 #. odoo-python
 #: code:addons/paperoffice_ai/models/account_move.py:0
 #, python-format
-msgid "PaperOffice AI did not answer in time. Please try again."
-msgstr "PaperOffice AI 未在时限内响应，请重试。"
+msgid "PaperOffice AI did not finish within 24 hours. Please check the job in PaperOffice AI before sending the bill again."
+msgstr "PaperOffice AI 未能在 24 小时内完成处理。请在重新发送该账单之前，先在 PaperOffice AI 中检查该作业。"
 
 #. module: paperoffice_ai
 #. odoo-python
@@ -223,6 +223,13 @@ msgstr "PaperOffice AI 作业"
 #: model:ir.model.fields,field_description:paperoffice_ai.field_res_config_settings__paperoffice_model
 msgid "PaperOffice AI model"
 msgstr "PaperOffice AI 模型"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/paperoffice_client.py:0
+#, python-format
+msgid "PaperOffice AI rejected the API key while fetching the result. Enter a valid User token (po_ut_...) in the Accounting settings. The bill keeps waiting for its result."
+msgstr "PaperOffice AI 在获取结果时拒绝了 API 密钥。请在会计设置中输入有效的用户令牌（po_ut_...）。该账单将继续等待结果。"
 
 #. module: paperoffice_ai
 #. odoo-python
@@ -377,6 +384,13 @@ msgstr "该发票不再是草稿状态，未进行任何更改。"
 #, python-format
 msgid "The result was saved but could not be applied to the bill. Please fill the bill manually."
 msgstr "结果已保存，但无法应用到账单。请手动填写该账单。"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/paperoffice_client.py:0
+#, python-format
+msgid "The stored PaperOffice AI job id is not valid. Please check the bill in PaperOffice AI."
+msgstr "保存的 PaperOffice AI 作业 ID 无效。请在 PaperOffice AI 中检查该账单。"
 
 #. module: paperoffice_ai
 #. odoo-python

@@ -6,14 +6,23 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 17.0-20260908\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-28 11:11+0000\n"
-"PO-Revision-Date: 2026-10-28 11:11+0000\n"
+"POT-Creation-Date: 2026-10-28 16:01+0000\n"
+"PO-Revision-Date: 2026-10-28 16:01+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid ""
+"%(error)s\n"
+"%(sent)s bill(s) were sent. These bills were not sent: %(names)s"
+msgstr ""
 
 #. module: paperoffice_ai
 #. odoo-python
@@ -185,15 +194,6 @@ msgstr ""
 #. odoo-python
 #: code:addons/paperoffice_ai/models/account_move.py:0
 #, python-format
-msgid ""
-"PaperOffice AI could not be reached. The remaining bills were not sent. "
-"Please try again later."
-msgstr ""
-
-#. module: paperoffice_ai
-#. odoo-python
-#: code:addons/paperoffice_ai/models/account_move.py:0
-#, python-format
 msgid "PaperOffice AI could not read the document (%s)."
 msgstr ""
 
@@ -201,7 +201,9 @@ msgstr ""
 #. odoo-python
 #: code:addons/paperoffice_ai/models/account_move.py:0
 #, python-format
-msgid "PaperOffice AI did not answer in time. Please try again."
+msgid ""
+"PaperOffice AI did not finish within 24 hours. Please check the job in "
+"PaperOffice AI before sending the bill again."
 msgstr ""
 
 #. module: paperoffice_ai
@@ -237,6 +239,16 @@ msgstr ""
 #. module: paperoffice_ai
 #: model:ir.model.fields,field_description:paperoffice_ai.field_res_config_settings__paperoffice_model
 msgid "PaperOffice AI model"
+msgstr ""
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/paperoffice_client.py:0
+#, python-format
+msgid ""
+"PaperOffice AI rejected the API key while fetching the result. Enter a valid"
+" User token (po_ut_...) in the Accounting settings. The bill keeps waiting "
+"for its result."
 msgstr ""
 
 #. module: paperoffice_ai
@@ -400,6 +412,15 @@ msgstr ""
 msgid ""
 "The result was saved but could not be applied to the bill. Please fill the "
 "bill manually."
+msgstr ""
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/paperoffice_client.py:0
+#, python-format
+msgid ""
+"The stored PaperOffice AI job id is not valid. Please check the bill in "
+"PaperOffice AI."
 msgstr ""
 
 #. module: paperoffice_ai
