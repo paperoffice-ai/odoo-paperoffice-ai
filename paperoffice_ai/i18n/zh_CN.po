@@ -1,0 +1,428 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* paperoffice_ai
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: zh_CN\n"
+"Plural-Forms: \n"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Attach the supplier invoice (PDF or image) to %s first."
+msgstr "请先将供应商发票（PDF 或图片）附加到 %s。"
+
+#. module: paperoffice_ai
+#: model:ir.model.fields.selection,name:paperoffice_ai.selection__res_config_settings__paperoffice_model__basic-pro-max
+msgid "Basic"
+msgstr "Basic"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Bill total differs from the document total. Check taxes and lines."
+msgstr "账单总额与文件总额不符，请检查税费和明细行。"
+
+#. module: paperoffice_ai
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.view_move_form_paperoffice
+msgid "Check PaperOffice AI result"
+msgstr "检查 PaperOffice AI 的结果"
+
+#. module: paperoffice_ai
+#: model:ir.model,name:paperoffice_ai.model_res_config_settings
+msgid "Config Settings"
+msgstr "配置设置"
+
+#. module: paperoffice_ai
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.res_config_settings_view_form_paperoffice
+msgid "Create a User token (po_ut_...) under Account &gt; API in PaperOffice AI."
+msgstr "在 PaperOffice AI 中，于 账户 &gt; API 下创建用户令牌（po_ut_...）。"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Currency %s on the document is not active in Odoo."
+msgstr "文件上的货币 %s 未在 Odoo 中激活。"
+
+#. module: paperoffice_ai
+#: model:ir.model.fields.selection,name:paperoffice_ai.selection__account_move__paperoffice_state__done
+msgid "Extracted"
+msgstr "已提取"
+
+#. module: paperoffice_ai
+#: model:ir.model.fields.selection,name:paperoffice_ai.selection__account_move__paperoffice_state__error
+msgid "Failed"
+msgstr "失败"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "IBAN"
+msgstr "IBAN"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "IBAN on the document is not one of the vendor's known bank accounts."
+msgstr "文件上的 IBAN 不是供应商的已知银行账户之一。"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Invoice %s"
+msgstr "发票 %s"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Invoice date"
+msgstr "发票日期"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Invoice number"
+msgstr "发票编号"
+
+#. module: paperoffice_ai
+#: model:ir.model,name:paperoffice_ai.model_account_move
+msgid "Journal Entry"
+msgstr "会计分录"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Net"
+msgstr "净额"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Net plus VAT on the document does not match the total."
+msgstr "文件上的净额加增值税与总额不匹配。"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#: code:addons/paperoffice_ai/models/paperoffice_client.py:0
+#, python-format
+msgid "No answer from PaperOffice AI. The document may have been received. Please check in PaperOffice AI before sending it again."
+msgstr "PaperOffice AI 暂无回复，文档可能已被接收。请在再次发送前先在 PaperOffice AI 中核对。"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "No purchase tax with %s %% found. Set the taxes on the lines."
+msgstr "未找到 %s %% 的采购税，请在明细行中设置税费。"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Only draft vendor bills and refunds can be read with PaperOffice AI."
+msgstr "仅可用 PaperOffice AI 读取草稿供应商账单和退款。"
+
+#. module: paperoffice_ai
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_bank_statement_line__paperoffice_state
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_move__paperoffice_state
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_payment__paperoffice_state
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.res_config_settings_view_form_paperoffice
+msgid "PaperOffice AI"
+msgstr "PaperOffice AI"
+
+#. module: paperoffice_ai
+#: model:ir.model.fields,field_description:paperoffice_ai.field_res_config_settings__paperoffice_api_key
+msgid "PaperOffice AI API key"
+msgstr "PaperOffice AI API 密钥"
+
+#. module: paperoffice_ai
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_bank_statement_line__paperoffice_enabled
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_move__paperoffice_enabled
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_payment__paperoffice_enabled
+msgid "PaperOffice AI available"
+msgstr "PaperOffice AI 可用"
+
+#. module: paperoffice_ai
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_bank_statement_line__paperoffice_warnings
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_move__paperoffice_warnings
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_payment__paperoffice_warnings
+msgid "PaperOffice AI checks"
+msgstr "PaperOffice AI 检查项"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/paperoffice_client.py:0
+#, python-format
+msgid "PaperOffice AI could not be reached. Nothing was sent. Please try again later."
+msgstr "无法联系到 PaperOffice AI，未进行任何发送操作。请稍后重试。"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "PaperOffice AI could not be reached. The remaining bills were not sent. Please try again later."
+msgstr "无法连接到 PaperOffice AI。其余账单未发送。请稍后重试。"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "PaperOffice AI could not read the document (%s)."
+msgstr "PaperOffice AI 无法读取该文件 (%s)。"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "PaperOffice AI did not answer in time. Please try again."
+msgstr "PaperOffice AI 未在时限内响应，请重试。"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "PaperOffice AI extracted:"
+msgstr "PaperOffice AI 已提取："
+
+#. module: paperoffice_ai
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.view_move_form_paperoffice
+msgid "PaperOffice AI is reading the attached document. The bill is filled automatically when it is done."
+msgstr "PaperOffice AI 正在读取附件中的文档，完成后账单将自动填充。"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "PaperOffice AI is switched off. An administrator can switch it on in the Accounting settings."
+msgstr "PaperOffice AI 已关闭，管理员可在会计设置中将其开启。"
+
+#. module: paperoffice_ai
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_bank_statement_line__paperoffice_job_id
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_move__paperoffice_job_id
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_payment__paperoffice_job_id
+msgid "PaperOffice AI job"
+msgstr "PaperOffice AI 作业"
+
+#. module: paperoffice_ai
+#: model:ir.model.fields,field_description:paperoffice_ai.field_res_config_settings__paperoffice_model
+msgid "PaperOffice AI model"
+msgstr "PaperOffice AI 模型"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/paperoffice_client.py:0
+#, python-format
+msgid "PaperOffice AI rejected the API key. Create a User token (po_ut_...) under Account > API and enter it in the Accounting settings."
+msgstr "PaperOffice AI API 密钥 被拒绝。请在 账户 > API 下创建用户令牌（po_ut_...）并输入到会计设置中。"
+
+#. module: paperoffice_ai
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_bank_statement_line__paperoffice_result
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_move__paperoffice_result
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_payment__paperoffice_result
+msgid "PaperOffice AI result"
+msgstr "PaperOffice AI 处理结果"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/paperoffice_client.py:0
+#, python-format
+msgid "PaperOffice AI returned an error (%s)."
+msgstr "PaperOffice AI 返回错误 (%s)。"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "PaperOffice AI returned no invoice fields."
+msgstr "PaperOffice AI 未返回发票字段。"
+
+#. module: paperoffice_ai
+#: model:ir.actions.server,name:paperoffice_ai.ir_cron_paperoffice_poll_ir_actions_server
+msgid "PaperOffice AI: fetch extraction results"
+msgstr "获取 PaperOffice AI：提取结果"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Please check:"
+msgstr "请检查："
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/paperoffice_client.py:0
+#, python-format
+msgid "Please enter your PaperOffice AI API key in the Accounting settings."
+msgstr "请在会计设置中输入您的 PaperOffice AI API 密钥。"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Please select at most %s bills at once."
+msgstr "请选择最多 %s 张发票进行操作。"
+
+#. module: paperoffice_ai
+#: model:ir.model.fields.selection,name:paperoffice_ai.selection__res_config_settings__paperoffice_model__premium-pro-max
+msgid "Premium"
+msgstr "Premium"
+
+#. module: paperoffice_ai
+#: model:ir.model.fields.selection,name:paperoffice_ai.selection__account_move__paperoffice_state__queued
+msgid "Processing"
+msgstr "处理中"
+
+#. module: paperoffice_ai
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.view_move_form_paperoffice
+msgid "Read again with PaperOffice AI"
+msgstr "请使用 PaperOffice AI 重新读取"
+
+#. module: paperoffice_ai
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.res_config_settings_view_form_paperoffice
+msgid "Read vendor bills with PaperOffice AI (paid)"
+msgstr "使用 PaperOffice AI（付费）读取供应商账单"
+
+#. module: paperoffice_ai
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.view_in_invoice_bill_tree_paperoffice
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.view_move_form_paperoffice
+msgid "Read with PaperOffice AI"
+msgstr "使用 PaperOffice AI 读取"
+
+#. module: paperoffice_ai
+#: model:ir.model.fields,field_description:paperoffice_ai.field_res_config_settings__paperoffice_enabled
+msgid "Send vendor bills to PaperOffice AI (paid)"
+msgstr "将供应商账单发送至 PaperOffice AI（付费）"
+
+#. module: paperoffice_ai
+#: model:ir.model.fields.selection,name:paperoffice_ai.selection__account_move__paperoffice_state__sending
+msgid "Sending"
+msgstr "发送中..."
+
+#. module: paperoffice_ai
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.res_config_settings_view_form_paperoffice
+msgid "Sends the attached document of a vendor bill to PaperOffice AI when a user clicks the button. Nothing is sent automatically. No specific plan is required. Usage is billed to your PaperOffice AI account as usual."
+msgstr "用户点击按钮时，将供应商账单的附件发送至 PaperOffice AI。不会自动发送任何内容。无需特定套餐。用量将照常计费到您的 PaperOffice AI 账户。"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Sent %s to PaperOffice AI for extraction."
+msgstr "已将 %s 发送至 PaperOffice AI 进行提取。"
+
+#. module: paperoffice_ai
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_bank_statement_line__paperoffice_sent_at
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_move__paperoffice_sent_at
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_payment__paperoffice_sent_at
+msgid "Sent to PaperOffice AI"
+msgstr "已发送至 PaperOffice AI"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Several VAT rates on the document. Set the taxes per line."
+msgstr "文档中有多个增值税税率。请逐行设置税费。"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Supplier"
+msgstr "供应商"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Supplier '%s' not found. Please select or create the vendor."
+msgstr "未找到供应商 '%s'。请选择或创建该供应商。"
+
+#. module: paperoffice_ai
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.view_move_form_paperoffice
+msgid "The attached document will be sent to PaperOffice AI. Continue?"
+msgstr "附件文档将发送至 PaperOffice AI，是否继续？"
+
+#. module: paperoffice_ai
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.view_in_invoice_bill_tree_paperoffice
+msgid "The attached documents of the selected bills that were not sent yet will be sent to PaperOffice AI (at most 20). Continue?"
+msgstr "所选且尚未发送的发票附件文档将立即发送至 PaperOffice AI（最多 20 个），是否继续？"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "The bill is no longer a draft. Nothing was changed."
+msgstr "该发票不再是草稿状态，未进行任何更改。"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "The result was saved but could not be applied to the bill. Please fill the bill manually."
+msgstr "结果已保存，但无法应用到账单。请手动填写该账单。"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "These bills are being sent to PaperOffice AI right now. Please wait a moment."
+msgstr "正在将这些发票发送至 PaperOffice AI，请稍候。"
+
+#. module: paperoffice_ai
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.view_move_form_paperoffice
+msgid "This bill was already sent to PaperOffice AI. Please check the result in PaperOffice AI first. Sending again is billed again. Continue?"
+msgstr "该账单已发送至 PaperOffice AI。请先在 PaperOffice AI 中查看结果。再次发送将再次计费。是否继续？"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Total"
+msgstr "总计"
+
+#. module: paperoffice_ai
+#: model:ir.model.fields.selection,name:paperoffice_ai.selection__res_config_settings__paperoffice_model__ultra-pro-max
+msgid "Ultra"
+msgstr "Ultra"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "VAT"
+msgstr "增值税"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Vendor has no bank account on file. Verify the IBAN before paying."
+msgstr "该供应商档案中无银行账户信息。付款前请核实 IBAN（国际银行账号）。"
+
+#. module: paperoffice_ai
+#: model:ir.model.fields,help:paperoffice_ai.field_res_config_settings__paperoffice_enabled
+msgid "When enabled, the attached document of a vendor bill is sent to PaperOffice AI for extraction when a user clicks the button. Nothing is sent automatically. No specific plan is required. Usage is billed to your PaperOffice AI account as usual."
+msgstr "启用后，用户点击按钮时，供应商账单的附件将发送至 PaperOffice AI 进行提取。不会自动发送任何内容。无需特定套餐。用量将照常计费到您的 PaperOffice AI 账户。"
+
+#. module: paperoffice_ai
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.res_config_settings_view_form_paperoffice
+msgid "po_ut_..."
+msgstr "po_ut_..."
+

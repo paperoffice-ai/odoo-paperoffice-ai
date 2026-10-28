@@ -1,0 +1,428 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* paperoffice_ai
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: pt\n"
+"Plural-Forms: \n"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Attach the supplier invoice (PDF or image) to %s first."
+msgstr "Anexe a fatura do fornecedor (PDF ou imagem) a %s primeiro."
+
+#. module: paperoffice_ai
+#: model:ir.model.fields.selection,name:paperoffice_ai.selection__res_config_settings__paperoffice_model__basic-pro-max
+msgid "Basic"
+msgstr "Basic"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Bill total differs from the document total. Check taxes and lines."
+msgstr "O total da fatura difere do total do documento. Verifique impostos e linhas."
+
+#. module: paperoffice_ai
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.view_move_form_paperoffice
+msgid "Check PaperOffice AI result"
+msgstr "Verificar resultado PaperOffice AI"
+
+#. module: paperoffice_ai
+#: model:ir.model,name:paperoffice_ai.model_res_config_settings
+msgid "Config Settings"
+msgstr "Configurações de Configuração"
+
+#. module: paperoffice_ai
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.res_config_settings_view_form_paperoffice
+msgid "Create a User token (po_ut_...) under Account &gt; API in PaperOffice AI."
+msgstr "Crie um token de usuário (po_ut_...) em Conta &gt; API no PaperOffice AI."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Currency %s on the document is not active in Odoo."
+msgstr "A moeda %s no documento não está ativa no Odoo."
+
+#. module: paperoffice_ai
+#: model:ir.model.fields.selection,name:paperoffice_ai.selection__account_move__paperoffice_state__done
+msgid "Extracted"
+msgstr "Extraído"
+
+#. module: paperoffice_ai
+#: model:ir.model.fields.selection,name:paperoffice_ai.selection__account_move__paperoffice_state__error
+msgid "Failed"
+msgstr "Falhou"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "IBAN"
+msgstr "IBAN"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "IBAN on the document is not one of the vendor's known bank accounts."
+msgstr "O IBAN no documento não é uma das contas bancárias conhecidas do fornecedor."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Invoice %s"
+msgstr "Fatura %s"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Invoice date"
+msgstr "Data da fatura"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Invoice number"
+msgstr "Número da fatura"
+
+#. module: paperoffice_ai
+#: model:ir.model,name:paperoffice_ai.model_account_move
+msgid "Journal Entry"
+msgstr "Lançamento contábil"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Net"
+msgstr "Líquido"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Net plus VAT on the document does not match the total."
+msgstr "O líquido mais IVA no documento não corresponde ao total."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#: code:addons/paperoffice_ai/models/paperoffice_client.py:0
+#, python-format
+msgid "No answer from PaperOffice AI. The document may have been received. Please check in PaperOffice AI before sending it again."
+msgstr "Sem resposta do PaperOffice AI. O documento pode ter sido recebido. Verifique no PaperOffice AI antes de enviar novamente."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "No purchase tax with %s %% found. Set the taxes on the lines."
+msgstr "Nenhum imposto de compra com %s %% encontrado. Defina os impostos nas linhas."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Only draft vendor bills and refunds can be read with PaperOffice AI."
+msgstr "Apenas faturas de fornecedor em rascunho e notas de crédito de fornecedor podem ser lidas pelo PaperOffice AI."
+
+#. module: paperoffice_ai
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_bank_statement_line__paperoffice_state
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_move__paperoffice_state
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_payment__paperoffice_state
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.res_config_settings_view_form_paperoffice
+msgid "PaperOffice AI"
+msgstr "PaperOffice AI"
+
+#. module: paperoffice_ai
+#: model:ir.model.fields,field_description:paperoffice_ai.field_res_config_settings__paperoffice_api_key
+msgid "PaperOffice AI API key"
+msgstr "Chave da API do PaperOffice AI"
+
+#. module: paperoffice_ai
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_bank_statement_line__paperoffice_enabled
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_move__paperoffice_enabled
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_payment__paperoffice_enabled
+msgid "PaperOffice AI available"
+msgstr "PaperOffice AI disponível"
+
+#. module: paperoffice_ai
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_bank_statement_line__paperoffice_warnings
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_move__paperoffice_warnings
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_payment__paperoffice_warnings
+msgid "PaperOffice AI checks"
+msgstr "Verificações do PaperOffice AI"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/paperoffice_client.py:0
+#, python-format
+msgid "PaperOffice AI could not be reached. Nothing was sent. Please try again later."
+msgstr "O PaperOffice AI não pôde ser alcançado. Nada foi enviado. Tente novamente mais tarde."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "PaperOffice AI could not be reached. The remaining bills were not sent. Please try again later."
+msgstr "Não foi possível contactar PaperOffice AI. As faturas restantes não foram enviadas. Tente novamente mais tarde."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "PaperOffice AI could not read the document (%s)."
+msgstr "O PaperOffice AI não conseguiu ler o documento (%s)."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "PaperOffice AI did not answer in time. Please try again."
+msgstr "O PaperOffice AI não respondeu a tempo. Por favor, tente novamente."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "PaperOffice AI extracted:"
+msgstr "PaperOffice AI extraído:"
+
+#. module: paperoffice_ai
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.view_move_form_paperoffice
+msgid "PaperOffice AI is reading the attached document. The bill is filled automatically when it is done."
+msgstr "O PaperOffice AI está lendo o documento anexado. A fatura é preenchida automaticamente quando estiver concluída."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "PaperOffice AI is switched off. An administrator can switch it on in the Accounting settings."
+msgstr "O PaperOffice AI está desligado. Um administrador pode ligá-lo nas configurações de Contabilidade."
+
+#. module: paperoffice_ai
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_bank_statement_line__paperoffice_job_id
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_move__paperoffice_job_id
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_payment__paperoffice_job_id
+msgid "PaperOffice AI job"
+msgstr "Trabalho do PaperOffice AI"
+
+#. module: paperoffice_ai
+#: model:ir.model.fields,field_description:paperoffice_ai.field_res_config_settings__paperoffice_model
+msgid "PaperOffice AI model"
+msgstr "Modelo do PaperOffice AI"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/paperoffice_client.py:0
+#, python-format
+msgid "PaperOffice AI rejected the API key. Create a User token (po_ut_...) under Account > API and enter it in the Accounting settings."
+msgstr "A chave da API foi rejeitada pelo PaperOffice AI. Crie um token de usuário (po_ut_...) em Conta > API e insira-o nas configurações de Contabilidade."
+
+#. module: paperoffice_ai
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_bank_statement_line__paperoffice_result
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_move__paperoffice_result
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_payment__paperoffice_result
+msgid "PaperOffice AI result"
+msgstr "Resultado do PaperOffice AI"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/paperoffice_client.py:0
+#, python-format
+msgid "PaperOffice AI returned an error (%s)."
+msgstr "O PaperOffice AI retornou um erro (%s)."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "PaperOffice AI returned no invoice fields."
+msgstr "O PaperOffice AI não retornou campos da fatura."
+
+#. module: paperoffice_ai
+#: model:ir.actions.server,name:paperoffice_ai.ir_cron_paperoffice_poll_ir_actions_server
+msgid "PaperOffice AI: fetch extraction results"
+msgstr "PaperOffice AI: buscar resultados de extração"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Please check:"
+msgstr "Por favor, verifique:"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/paperoffice_client.py:0
+#, python-format
+msgid "Please enter your PaperOffice AI API key in the Accounting settings."
+msgstr "Por favor, insira sua chave da API do PaperOffice AI nas configurações de Contabilidade."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Please select at most %s bills at once."
+msgstr "Por favor, selecione no máximo %s faturas de uma vez."
+
+#. module: paperoffice_ai
+#: model:ir.model.fields.selection,name:paperoffice_ai.selection__res_config_settings__paperoffice_model__premium-pro-max
+msgid "Premium"
+msgstr "Premium"
+
+#. module: paperoffice_ai
+#: model:ir.model.fields.selection,name:paperoffice_ai.selection__account_move__paperoffice_state__queued
+msgid "Processing"
+msgstr "Processando"
+
+#. module: paperoffice_ai
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.view_move_form_paperoffice
+msgid "Read again with PaperOffice AI"
+msgstr "Leia novamente com o PaperOffice AI"
+
+#. module: paperoffice_ai
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.res_config_settings_view_form_paperoffice
+msgid "Read vendor bills with PaperOffice AI (paid)"
+msgstr "Ler faturas de fornecedores com PaperOffice AI (com cobrança)"
+
+#. module: paperoffice_ai
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.view_in_invoice_bill_tree_paperoffice
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.view_move_form_paperoffice
+msgid "Read with PaperOffice AI"
+msgstr "Ler com PaperOffice AI"
+
+#. module: paperoffice_ai
+#: model:ir.model.fields,field_description:paperoffice_ai.field_res_config_settings__paperoffice_enabled
+msgid "Send vendor bills to PaperOffice AI (paid)"
+msgstr "Enviar faturas de fornecedores para o PaperOffice AI (com cobrança)"
+
+#. module: paperoffice_ai
+#: model:ir.model.fields.selection,name:paperoffice_ai.selection__account_move__paperoffice_state__sending
+msgid "Sending"
+msgstr "Enviando"
+
+#. module: paperoffice_ai
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.res_config_settings_view_form_paperoffice
+msgid "Sends the attached document of a vendor bill to PaperOffice AI when a user clicks the button. Nothing is sent automatically. No specific plan is required. Usage is billed to your PaperOffice AI account as usual."
+msgstr "Envia o documento anexado de uma fatura de fornecedor para PaperOffice AI quando o usuário clica no botão. Nada é enviado automaticamente. Não é necessário um plano específico. O uso é cobrado na sua conta do PaperOffice AI como de costume."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Sent %s to PaperOffice AI for extraction."
+msgstr "Enviado %s para o PaperOffice AI para extração."
+
+#. module: paperoffice_ai
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_bank_statement_line__paperoffice_sent_at
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_move__paperoffice_sent_at
+#: model:ir.model.fields,field_description:paperoffice_ai.field_account_payment__paperoffice_sent_at
+msgid "Sent to PaperOffice AI"
+msgstr "Enviado para o PaperOffice AI"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Several VAT rates on the document. Set the taxes per line."
+msgstr "Várias alíquotas de IVA no documento. Defina os impostos por linha."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Supplier"
+msgstr "Fornecedor"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Supplier '%s' not found. Please select or create the vendor."
+msgstr "Fornecedor '%s' não encontrado. Por favor, selecione ou crie o fornecedor."
+
+#. module: paperoffice_ai
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.view_move_form_paperoffice
+msgid "The attached document will be sent to PaperOffice AI. Continue?"
+msgstr "O documento anexado será enviado ao PaperOffice AI. Continuar?"
+
+#. module: paperoffice_ai
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.view_in_invoice_bill_tree_paperoffice
+msgid "The attached documents of the selected bills that were not sent yet will be sent to PaperOffice AI (at most 20). Continue?"
+msgstr "Os documentos anexados das faturas selecionadas que ainda não foram enviados serão enviados ao PaperOffice AI (no máximo 20). Continuar?"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "The bill is no longer a draft. Nothing was changed."
+msgstr "A fatura já não é um rascunho. Nada foi alterado."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "The result was saved but could not be applied to the bill. Please fill the bill manually."
+msgstr "O resultado foi salvo, mas não foi possível aplicá-lo à fatura. Preencha a fatura manualmente."
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "These bills are being sent to PaperOffice AI right now. Please wait a moment."
+msgstr "Estas faturas estão sendo enviadas para o PaperOffice AI agora. Por favor, aguarde um momento."
+
+#. module: paperoffice_ai
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.view_move_form_paperoffice
+msgid "This bill was already sent to PaperOffice AI. Please check the result in PaperOffice AI first. Sending again is billed again. Continue?"
+msgstr "Esta fatura já foi enviada para PaperOffice AI. Verifique primeiro o resultado no PaperOffice AI. Um novo envio gera nova cobrança. Continuar?"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Total"
+msgstr "Total"
+
+#. module: paperoffice_ai
+#: model:ir.model.fields.selection,name:paperoffice_ai.selection__res_config_settings__paperoffice_model__ultra-pro-max
+msgid "Ultra"
+msgstr "Ultra"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "VAT"
+msgstr "IVA"
+
+#. module: paperoffice_ai
+#. odoo-python
+#: code:addons/paperoffice_ai/models/account_move.py:0
+#, python-format
+msgid "Vendor has no bank account on file. Verify the IBAN before paying."
+msgstr "O fornecedor não possui conta bancária cadastrada. Verifique o IBAN antes de pagar."
+
+#. module: paperoffice_ai
+#: model:ir.model.fields,help:paperoffice_ai.field_res_config_settings__paperoffice_enabled
+msgid "When enabled, the attached document of a vendor bill is sent to PaperOffice AI for extraction when a user clicks the button. Nothing is sent automatically. No specific plan is required. Usage is billed to your PaperOffice AI account as usual."
+msgstr "Quando ativado, o documento anexado de uma fatura de fornecedor é enviado para PaperOffice AI para extração quando o usuário clica no botão. Nada é enviado automaticamente. Não é necessário um plano específico. O uso é cobrado na sua conta do PaperOffice AI como de costume."
+
+#. module: paperoffice_ai
+#: model_terms:ir.ui.view,arch_db:paperoffice_ai.res_config_settings_view_form_paperoffice
+msgid "po_ut_..."
+msgstr "po_ut_..."
+
