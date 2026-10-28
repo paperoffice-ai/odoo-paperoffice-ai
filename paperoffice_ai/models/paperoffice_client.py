@@ -45,7 +45,7 @@ class PaperOfficeClient:
         return {
             "Authorization": "Bearer %s" % self.api_key,
             "Accept": "application/json",
-            "User-Agent": "Mozilla/5.0 (compatible; PaperOffice-AI-Odoo/17.0.1.2.0)",
+            "User-Agent": "Mozilla/5.0 (compatible; PaperOffice-AI-Odoo/17.0.1.2.1)",
         }
 
     def _check(self, response):

@@ -1,9 +1,9 @@
 {
     "name": "PaperOffice AI - Invoice Extraction",
     "summary": "Read supplier invoices with PaperOffice AI and fill vendor bills",
-    "version": "17.0.1.2.0",
+    "version": "17.0.1.2.1",
     "category": "Accounting/Accounting",
-    "author": "PaperOffice Enterprise Operations, S.L.U.",
+    "author": "PaperOffice Enterprise Operations S.L.U.",
     "website": "https://paperoffice.ai",
     "license": "LGPL-3",
     "depends": ["account"],
